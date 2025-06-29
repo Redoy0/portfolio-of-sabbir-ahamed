@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" width="700" height="180">
+  <!-- "sabbir" in bold white -->
+  <text x="25" y="100" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF">sabbir</text>
+
+  <!-- "ahamed." with period properly aligned -->
+  <text x="330" y="100" font-family="Arial, sans-serif" font-size="72" font-weight="normal" fill="#FFFFFF">ahamed</text><text x="600" y="100" font-family="Arial, sans-serif" font-size="72" font-weight="normal" fill="#FF0000">.</text>
+</svg>
