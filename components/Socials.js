@@ -5,20 +5,20 @@ import Link from "next/link";
 import {RiLinkedinLine,RiGithubLine,RiFacebookLine,RiInstagramLine} from "react-icons/ri";
 
 const Socials = () => {
-  return <div href={''} className="flex items-center gap-x-6 text-2xl">
-    <Link href={''} className="hover:text-accent transition-all duration-300 hover:scale-125 transform">
+  return <div href={''} className="flex items-center gap-x-5 text-lg">
+    <Link href={''} className="hover:text-accent transition-all duration-300">
       <RiGithubLine/>
     </Link>
     
-    <Link href={''} className="hover:text-accent transition-all duration-300 hover:scale-125 transform">
+    <Link href={''} className="hover:text-accent transition-all duration-300">
       <RiLinkedinLine/>
     </Link>
     
-    <Link href={''} className="hover:text-accent transition-all duration-300 hover:scale-125 transform">
+    <Link href={''} className="hover:text-accent transition-all duration-300">
       <RiFacebookLine/>
     </Link>
     
-    <Link href={''} className="hover:text-accent transition-all duration-300 hover:scale-125 transform">
+    <Link href={''} className="hover:text-accent transition-all duration-300">
       <RiInstagramLine/>
     </Link>
 

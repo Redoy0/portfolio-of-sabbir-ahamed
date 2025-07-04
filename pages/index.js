@@ -46,33 +46,25 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-			      className="h1 leading-tight">
-            <span className="text-white/90">Hi, I'm</span>
+			      className="h1">
+            Hi, I'm
+            <i> Sabbir Ahamed</i>
             <br />
-            <span className="bg-gradient-to-r from-accent via-accent to-red-400 bg-clip-text text-transparent font-bold text-6xl xl:text-7xl">
-              Sabbir Ahamed
+            <span className="relative inline-block min-w-[180px] align-middle">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentTitle}
+                  variants={titleVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="text-accent font-bold px-2 py-1 rounded-lg  transition-colors duration-300"
+                  style={{ display: "inline-block" }}
+                >
+                  {titles[currentTitle]}
+                </motion.span>
+              </AnimatePresence>
             </span>
-            <br />
-            <div className="flex items-baseline justify-center xl:justify-start gap-2">
-              <span className="text-white/80 text-3xl xl:text-4xl font-light">
-                I'm a
-              </span>
-              <span className="relative inline-block min-w-[300px]">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={currentTitle}
-                    variants={titleVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent font-bold text-3xl xl:text-4xl px-2 py-1 rounded-lg transition-colors duration-300"
-                    style={{ display: "inline-block" }}
-                  >
-                    {titles[currentTitle]}
-                  </motion.span>
-                </AnimatePresence>
-              </span>
-            </div>
           </motion.h1>
           {/* subtitle */}
           <motion.p 
@@ -80,12 +72,10 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-		  className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-white/80 text-lg leading-relaxed font-light">
-            <span className="text-accent font-semibold">Passionate programmer</span> and{" "}
-            <span className="text-secondary font-semibold">creative problem solver</span>{" "}
-            who transforms complex challenges into elegant solutions. I believe in pushing the boundaries of what's possible through{" "}
-            <span className="text-accent font-semibold">innovative technology</span> and{" "}
-            <span className="text-secondary font-semibold">thoughtful design</span>.
+		  className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">
+            I'm a passionate programmer and problem solver that enjoys breaking
+            down difficult problems and coming up with creative solutions that
+            stretch the bounds of what's possible.
           </motion.p>
           {/* Btn */}
           <div className="flex justify-center xl:hidden relative">
