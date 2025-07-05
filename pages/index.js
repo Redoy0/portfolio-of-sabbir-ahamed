@@ -39,32 +39,38 @@ const Home = () => {
     <div className="bg-primary/60 h-full">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto px-4 sm:px-6 lg:px-8">
           {/* title */}
           <motion.h1 
 		        variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-			      className="h1">
-            Hi, I'm
-            <i> Sabbir Ahamed</i>
+			      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-4 sm:mb-6">
+            <span className="text-white/90 font-light">Hello, I'm</span>
             <br />
-            <span className="relative inline-block min-w-[180px] align-middle">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={currentTitle}
-                  variants={titleVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  className="text-accent font-bold px-2 py-1 rounded-lg  transition-colors duration-300"
-                  style={{ display: "inline-block" }}
-                >
-                  {titles[currentTitle]}
-                </motion.span>
-              </AnimatePresence>
+            <span className="bg-gradient-to-r from-accent via-purple-400 to-pink-400 bg-clip-text text-transparent font-black tracking-tight">
+              Sabbir Ahamed
             </span>
+            <br />
+            <div className="flex flex-wrap items-baseline justify-center xl:justify-start gap-2 sm:gap-3 mt-3 sm:mt-4">
+              <span className="text-white/90 text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium leading-none">I'm a</span>
+              <span className="relative inline-block min-w-[180px] sm:min-w-[200px]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentTitle}
+                    variants={titleVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="text-accent font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-accent/10 backdrop-blur-sm border border-accent/20 shadow-lg transition-all duration-300 text-lg sm:text-xl md:text-2xl xl:text-3xl leading-none"
+                    style={{ display: "inline-block" }}
+                  >
+                    {titles[currentTitle]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </div>
           </motion.h1>
           {/* subtitle */}
           <motion.p 
@@ -72,34 +78,72 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-		  className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">
-            I'm a passionate programmer and problem solver that enjoys breaking
-            down difficult problems and coming up with creative solutions that
-            stretch the bounds of what's possible.
+		  className="max-w-sm sm:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 mb-8 sm:mb-10 xl:mb-16 text-white/80 text-base sm:text-lg md:text-xl xl:text-2xl leading-relaxed font-light tracking-wide px-2 sm:px-0">
+            I'm a <span className="text-accent font-semibold">passionate programmer</span> and{" "}
+            <span className="text-accent font-semibold">problem solver</span> that enjoys breaking down{" "}
+            <span className="text-accent font-semibold">difficult problems</span> and coming up with{" "}
+            <span className="text-accent font-semibold">creative solutions</span> that stretch the bounds of what's possible.
           </motion.p>
           {/* Btn */}
-          <div className="flex justify-center xl:hidden relative">
-            <ProjectsBtn />
+          <div className="flex flex-col sm:flex-row items-center justify-center xl:hidden relative gap-3 px-4">
+            <div className="scale-75 sm:scale-90">
+              <ProjectsBtn />
+            </div>
+            <a
+              href="/cv/CV_of_Md_Sabbir_Ahamed.pdf"
+              download="CV_of_Md_Sabbir_Ahamed.pdf"
+              className="group relative inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 overflow-hidden font-medium text-white transition-all duration-300 ease-out border-2 border-accent rounded-full hover:bg-accent hover:text-black text-sm sm:text-base"
+            >
+              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-accent group-hover:translate-x-0 ease">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </span>
+              <span className="absolute flex items-center justify-center w-full h-full text-accent transition-all duration-300 transform group-hover:translate-x-full ease text-sm sm:text-base">
+                Download Resume
+              </span>
+              <span className="relative invisible text-sm sm:text-base">Download Resume</span>
+            </a>
           </div>
           <motion.div
             variants={fadeIn("down", 0.4)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden xl:flex"
+            className="hidden xl:flex items-center gap-6"
           >
             <ProjectsBtn />
+            <motion.a
+              href="/cv/CV_of_Md_Sabbir_Ahamed.pdf"
+              download="CV_of_Md_Sabbir_Ahamed.pdf"
+              variants={fadeIn("down", 0.5)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium text-white transition-all duration-300 ease-out border-2 border-accent rounded-full hover:bg-accent hover:text-black text-lg"
+            >
+              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-accent group-hover:translate-x-0 ease">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </span>
+              <span className="absolute flex items-center justify-center w-full h-full text-accent transition-all duration-300 transform group-hover:translate-x-full ease">
+                Download Resume
+              </span>
+              <span className="relative invisible">Download Resume</span>
+            </motion.a>
           </motion.div>
         </div>
       </div>
       {/* image */}
-      <div className="w-[1200px] h-full absolute right-0 bottom-0">
+      <div className="w-full sm:w-[800px] md:w-[1000px] lg:w-[1200px] h-full absolute right-0 bottom-0 overflow-hidden">
         {/* bg image */}
-        <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute  mix-blend-color-dodge
-         translate-z-0'>
+        <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0'>
           </div>
           {/* particles */}
-          <ParticlesContainer />
+          <div className="hidden sm:block">
+            <ParticlesContainer />
+          </div>
           {/* avater Img */}
           <motion.div 
             variants={fadeIn("up", 0.5)}
@@ -107,10 +151,9 @@ const Home = () => {
             animate="show"
             exit="hidden" 
             transition={{duration:1, ease: "easeInOut"}}
-            className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%]">
+            className="w-full h-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[737px] max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[678px] absolute -bottom-20 sm:-bottom-24 md:-bottom-28 lg:bottom-0 left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none lg:right-[8%]">
             <Avatar />
           </motion.div>
-
         </div>
 
       </div>
