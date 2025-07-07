@@ -313,7 +313,7 @@ const About = () => {
                       <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20">
                         <div className="flex items-center justify-between mb-4">
                           <h3 className="text-white font-semibold text-lg">{item.title}</h3>
-                          <span className="text-accent text-xs bg-accent/20 px-2 py-1 rounded-full">{item.type}</span>
+                          <span className="text-accent text-xs bg-accent/20 px-3 py-1.5 rounded-full whitespace-nowrap flex-shrink-0">{item.type}</span>
                         </div>
                         <div className="text-accent font-medium mb-3 flex items-center">
                           <div className="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse"></div>
