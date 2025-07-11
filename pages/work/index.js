@@ -22,7 +22,7 @@ const Work = () => {
             animate='show'
             exit='hidden'
             className='h2 lg:mt-8 xl:mt-12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
-              My  <span className='text-accent'>Projects.</span>
+              My Projects <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p 
             variants={fadeIn('up', 0.4)}
