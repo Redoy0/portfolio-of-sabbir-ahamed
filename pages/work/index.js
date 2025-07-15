@@ -15,14 +15,14 @@ const Work = () => {
       <div className='container mx-auto px-4 md:px-6 lg:px-8'>
         <div className='flex flex-col lg:flex-row gap-x-4 md:gap-x-6 lg:gap-x-8'>
           {/* text */}
-          <div className='text-center flex lg:w-[35vw] xl:w-[30vw] flex-col lg:text-left mb-6 md:mb-12 lg:mb-0'>
+          <div className='text-center flex lg:w-[35vw] xl:w-[30vw] flex-col lg:text-left mb-6 md:mb-4 lg:mb-0'>
             <motion.h2 
             variants={fadeIn('up', 0.2)}
             initial='hidden'
             animate='show'
             exit='hidden'
             className='h2 lg:mt-8 xl:mt-12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
-              My Projects <span className='text-accent'>.</span>
+              My  <span className='text-accent'>Projects.</span>
             </motion.h2>
             <motion.p 
             variants={fadeIn('up', 0.4)}

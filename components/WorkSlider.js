@@ -20,7 +20,7 @@ export const workSlider = {
           live: 'https://schedulearn-demo.vercel.app',
         },
         {
-          title: 'NeuvoHomes 2',
+          title: 'NeuvoHomes',
           path: '/thumb4.jpg',
           description: 'Developed a platform for ordering 3D home designs and exploring pre-made home delivery options. The site features a responsive design and a user-friendly ordering system.',
           stack: ['HTML', 'CSS', 'Bootstrap', 'Django'],
@@ -96,51 +96,77 @@ import {FaGithub, FaExternalLinkAlt} from 'react-icons/fa';
 import Image from 'next/image';
 
 const WorkSlider = () => {
+  // Create responsive slides - individual for mobile, grouped for desktop
+  const createResponsiveSlides = () => {
+    const allProjects = workSlider.slides.flatMap(slide => slide.images);
+    
+    // For desktop, group projects into slides of 4
+    const desktopSlides = [];
+    for (let i = 0; i < allProjects.length; i += 4) {
+      desktopSlides.push(allProjects.slice(i, i + 4));
+    }
+    
+    return {
+      individual: allProjects.map((project, index) => ({ project, index })),
+      grouped: desktopSlides
+    };
+  };
+
+  const { individual, grouped } = createResponsiveSlides();
   return (
-    <Swiper
-      spaceBetween={10}
-      pagination={{
-        clickable: true
-      }}
-      modules={[Pagination]}
-      className='h-[280px] sm:h-[400px] md:h-[380px] lg:h-[500px] xl:h-[480px]'>
-      {workSlider.slides.map((slide, index) => {
-        return (
-          <SwiperSlide key={index}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-3 lg:gap-4 cursor-pointer">
-              {slide.images.map((image, index) => {
-                return (
-                <div className="relative rounded-lg overflow-hidden flex items-center justify-center group" key={index}>
-                  <div className="flex items-center justify-center relative overflow-hidden group">
-                    {/* image */}
-                    <Image src={image.path} width={500} height={300} alt={image.title} className="w-full h-full object-cover" />
-                    {/* overlay gradient */}
+    <>
+      {/* Mobile and tablet view - individual projects */}
+      <div className="block lg:hidden">
+        <Swiper
+          spaceBetween={15}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 8,
+            },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 1,
+              spaceBetween: 12,
+            },
+          }}
+          pagination={{
+            clickable: true
+          }}
+          modules={[Pagination]}
+          className='h-[180px] xs:h-[200px] sm:h-[250px] md:h-[350px] mb-4 sm:mb-6 md:mb-8 max-w-none'>
+          
+          {individual.map(({ project, index }) => (
+            <SwiperSlide key={`mobile-${index}`}>
+              <div className="w-full h-full px-2 sm:px-3">
+                <div className="relative rounded-lg overflow-hidden flex items-center justify-center group w-full h-full aspect-video max-w-full shadow-lg">
+                  <div className="flex items-center justify-center relative overflow-hidden group w-full h-full">
+                    <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700"></div> 
                     
-                    {/* project info overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-between p-3 md:p-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      {/* top section - title and links */}
-                      <div className="flex justify-between items-start">
-                        <h3 className="text-white font-bold text-base md:text-lg lg:text-xl drop-shadow-lg text-shadow-lg">{image.title}</h3>
-                        <div className="flex gap-1 md:gap-2">
-                          <a href={image.github} target="_blank" rel="noopener noreferrer" 
+                    <div className="absolute inset-0 flex flex-col justify-between p-3 xs:p-4 sm:p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="flex justify-between items-start gap-2">
+                        <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg drop-shadow-lg leading-tight flex-1 pr-2">{project.title}</h3>
+                        <div className="flex gap-2 flex-shrink-0">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" 
                              className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
-                            <FaGithub size={16} className="md:w-5 md:h-5" />
+                            <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
                           </a>
-                          <a href={image.live} target="_blank" rel="noopener noreferrer"
+                          <a href={project.live} target="_blank" rel="noopener noreferrer"
                              className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
-                            <FaExternalLinkAlt size={14} className="md:w-4 md:h-4" />
+                            <FaExternalLinkAlt className="w-3 h-3 sm:w-4 sm:h-4" />
                           </a>
                         </div>
                       </div>
                       
-                      {/* bottom section - description and stack */}
-                      <div className="space-y-2 md:space-y-3 lg:space-y-4">
-                        <p className="text-white text-xs md:text-sm leading-relaxed drop-shadow-lg font-medium line-clamp-3 md:line-clamp-4">{image.description}</p>
-                        <div className="flex flex-wrap gap-1 md:gap-2">
-                          {image.stack.map((tech, techIndex) => (
+                      <div className="space-y-2">
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                          {project.stack.map((tech, techIndex) => (
                             <span key={techIndex} 
-                                  className="text-xs bg-white/25 text-white px-2 md:px-3 py-1 md:py-1.5 rounded-full border border-white/40 hover:bg-accent/40 hover:border-accent/60 hover:text-accent hover:scale-110 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 font-medium drop-shadow-sm">
+                                  className="text-xs sm:text-sm bg-white/25 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/40 hover:bg-accent/40 hover:border-accent/60 hover:text-accent hover:scale-105 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 font-medium drop-shadow-sm whitespace-nowrap">
                               {tech}
                             </span>
                           ))}
@@ -149,14 +175,91 @@ const WorkSlider = () => {
                     </div>
                   </div>
                 </div>
-                );
-                })}
-            </div>
-              
-          </SwiperSlide>
-        );
-      })}
-    </Swiper >
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Desktop view - 2x2 grid (2 slides total, 4 projects each) */}
+      <div className="hidden lg:block">
+        <Swiper
+          spaceBetween={20}
+          breakpoints={{
+            1024: {
+              slidesPerView: 1,
+              spaceBetween: 15,
+            },
+            1280: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+          }}
+          pagination={{
+            clickable: true
+          }}
+          modules={[Pagination]}
+          className='lg:h-[400px] xl:h-[450px] 2xl:h-[500px] mb-4 sm:mb-6 md:mb-8 max-w-none'>
+          
+          {grouped.map((projectGroup, slideIndex) => (
+            <SwiperSlide key={`desktop-${slideIndex}`}>
+              <div className="w-full h-full px-4">
+                <div className="grid grid-cols-2 gap-4 xl:gap-6 h-full">
+                  {projectGroup.map((project, index) => (
+                    <div key={index} className="relative rounded-xl overflow-hidden group shadow-2xl hover:shadow-accent/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105">
+                      <div className="relative w-full h-full aspect-video">
+                        <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
+                        
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-all duration-500"></div>
+                        
+                        {/* Enhanced overlay with better positioning */}
+                        <div className="absolute inset-0 flex flex-col justify-between p-4 xl:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-4">
+                          {/* Top section */}
+                          <div className="flex justify-between items-start gap-3">
+                            <h3 className="text-white font-bold text-lg xl:text-xl 2xl:text-2xl drop-shadow-2xl leading-tight flex-1">{project.title}</h3>
+                            <div className="flex gap-3 flex-shrink-0">
+                              <a href={project.github} target="_blank" rel="noopener noreferrer" 
+                                 className="text-white hover:text-accent hover:scale-125 transition-all duration-300 transform drop-shadow-lg p-2 rounded-full bg-white/10 hover:bg-accent/20">
+                                <FaGithub className="w-5 h-5 xl:w-6 xl:h-6" />
+                              </a>
+                              <a href={project.live} target="_blank" rel="noopener noreferrer"
+                                 className="text-white hover:text-accent hover:scale-125 transition-all duration-300 transform drop-shadow-lg p-2 rounded-full bg-white/10 hover:bg-accent/20">
+                                <FaExternalLinkAlt className="w-4 h-4 xl:w-5 xl:h-5" />
+                              </a>
+                            </div>
+                          </div>
+                          
+                          {/* Bottom section */}
+                          <div className="space-y-3">
+                            <div className="flex flex-wrap gap-2 xl:gap-3">
+                              {project.stack.slice(0, 4).map((tech, techIndex) => (
+                                <span key={techIndex} 
+                                      className="text-xs xl:text-sm bg-white/20 backdrop-blur-sm text-white px-3 xl:px-4 py-1.5 xl:py-2 rounded-full border border-white/30 hover:bg-accent/30 hover:border-accent/50 hover:text-white hover:scale-110 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 font-semibold drop-shadow-lg whitespace-nowrap">
+                                  {tech}
+                                </span>
+                              ))}
+                              {project.stack.length > 4 && (
+                                <span className="text-xs xl:text-sm bg-white/20 backdrop-blur-sm text-white px-3 xl:px-4 py-1.5 xl:py-2 rounded-full border border-white/30 font-semibold drop-shadow-lg">
+                                  +{project.stack.length - 4}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Decorative corner accent */}
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </>
   );
 
 };
