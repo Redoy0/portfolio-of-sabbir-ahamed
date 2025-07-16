@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 150" width="580" height="150">
+  <!-- "sabbir" in bold white -->
+  <text x="20" y="80" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#FFFFFF">sabbir</text>
+
+  <!-- "ahamed." as a cohesive unit with the period in red -->
+  <text x="275" y="80" font-family="Arial, sans-serif" font-size="60" font-weight="normal" fill="#FFFFFF">ahamed</text><text x="495" y="80" font-family="Arial, sans-serif" font-size="60" font-weight="normal" fill="#FF0000">.</text>
+</svg>
