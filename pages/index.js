@@ -37,10 +37,10 @@ const Home = () => {
 
 	return (
     <div className="bg-primary/60 h-full">
-      {/* text */}
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* title */}
+      {/* text */ }
+        <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 pt-8 sm:pt-8 md:pt-0 lg:pt-0">
+          <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto px-4 sm:px-6 lg:px-8">
+            {/* title */}
           <motion.h1 
 		        variants={fadeIn("down", 0.2)}
             initial="hidden"
@@ -78,31 +78,31 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-		  className="max-w-sm sm:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 mb-8 sm:mb-10 xl:mb-16 text-white/80 text-base sm:text-lg md:text-xl xl:text-2xl leading-relaxed font-light tracking-wide px-2 sm:px-0">
+		  className="max-w-sm sm:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 mb-6 max-h-[900px]:mb-4 sm:mb-8 xl:mb-16 text-white/80 text-sm max-h-[900px]:text-xs sm:text-base md:text-lg xl:text-xl leading-relaxed font-light tracking-wide px-2 sm:px-0">
             I'm a <span className="text-accent font-semibold">passionate programmer</span> and{" "}
             <span className="text-accent font-semibold">problem solver</span> that enjoys breaking down{" "}
             <span className="text-accent font-semibold">difficult problems</span> and coming up with{" "}
             <span className="text-accent font-semibold">creative solutions</span> that stretch the bounds of what's possible.
           </motion.p>
           {/* Btn */}
-          <div className="flex flex-col sm:flex-row items-center justify-center xl:hidden relative gap-3 px-4">
-            <div className="scale-75 sm:scale-90">
+          <div className="flex flex-col sm:flex-row items-center justify-center xl:hidden relative gap-3 max-h-[900px]:gap-2 px-4">
+            <div className="scale-60 max-h-[900px]:scale-50 sm:scale-75">
               <ProjectsBtn />
             </div>
             <a
               href="/cv/CV_of_Md_Sabbir_Ahamed.pdf"
               download="CV_of_Md_Sabbir_Ahamed.pdf"
-              className="group relative inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 overflow-hidden font-medium text-white transition-all duration-300 ease-out border-2 border-accent rounded-full hover:bg-accent hover:text-black text-sm sm:text-base"
+              className="group relative inline-flex items-center justify-center px-3 py-1.5 max-h-[900px]:px-2.5 max-h-[900px]:py-1 sm:px-4 sm:py-2 overflow-hidden font-medium text-white transition-all duration-300 ease-out border-2 border-accent rounded-full hover:bg-accent hover:text-black text-xs max-h-[900px]:text-[10px] sm:text-sm"
             >
               <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-accent group-hover:translate-x-0 ease">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 max-h-[900px]:w-2.5 max-h-[900px]:h-2.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </span>
-              <span className="absolute flex items-center justify-center w-full h-full text-accent transition-all duration-300 transform group-hover:translate-x-full ease text-sm sm:text-base">
+              <span className="absolute flex items-center justify-center w-full h-full text-accent transition-all duration-300 transform group-hover:translate-x-full ease text-xs max-h-[900px]:text-[10px] sm:text-sm">
                 Download Resume
               </span>
-              <span className="relative invisible text-sm sm:text-base">Download Resume</span>
+              <span className="relative invisible text-xs max-h-[900px]:text-[10px] sm:text-sm">Download Resume</span>
             </a>
           </div>
           <motion.div

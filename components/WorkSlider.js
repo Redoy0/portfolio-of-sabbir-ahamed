@@ -5,7 +5,7 @@ export const workSlider = {
       images: [
         {
           title: 'Kechedei',
-          path: '/thumb1.jpg',
+          path: '/kechedei1.png',
           description: 'Designed and developed a responsive website for a laundry shop to enable customers to explore services, place orders, and track laundry status.',
           stack: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'PHP'],
           github: 'https://github.com/sabbir-ahamed/kechedei',
@@ -29,7 +29,7 @@ export const workSlider = {
         },
         {
           title: 'Portfolio Website',
-          path: '/thumb4.jpg',
+          path: '/portfolio2.png',
           description: 'Built a sleek, responsive portfolio website to showcase my work, skills, and experience—with smooth navigation and interactive elements for a standout user experience across all devices.',
           stack: ['HTML', 'CSS', 'JavaScript'],
           github: 'https://github.com/sabbir-ahamed/portfolio',
