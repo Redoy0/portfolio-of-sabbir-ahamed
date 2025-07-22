@@ -43,7 +43,7 @@ export const workSlider = {
           title: 'DIU LeaderBoard',
           path: '/thumb3.jpg',
           description: 'Created a gamified mobile app for DIU students to track academic rankings, featuring secure login and real-time leaderboard to boost engagement and motivation.',
-          stack: ['Flutter','Firebase', 'Firestore', 'API'],
+          stack: ['Flutter', 'Firebase', 'Firestore', 'API'],
           github: 'https://github.com/sabbir-ahamed/diu-leaderboard',
           live: 'https://diu-leaderboard-demo.vercel.app',
         },
@@ -71,7 +71,7 @@ export const workSlider = {
           github: 'https://github.com/sabbir-ahamed/weather-dashboard',
           live: 'https://weather-dashboard-demo.vercel.app',
         },
-        
+
       ],
     },
   ],
@@ -86,11 +86,11 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
 // import required modules
-import {  Pagination } from 'swiper';
+import { Pagination } from 'swiper';
 
 // icons
-import {BsArrowRight} from 'react-icons/bs';
-import {FaGithub, FaExternalLinkAlt} from 'react-icons/fa';
+import { BsArrowRight } from 'react-icons/bs';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 // next image
 import Image from 'next/image';
@@ -99,24 +99,31 @@ const WorkSlider = () => {
   // Create responsive slides - individual for mobile, grouped for desktop
   const createResponsiveSlides = () => {
     const allProjects = workSlider.slides.flatMap(slide => slide.images);
-    
+
     // For desktop, group projects into slides of 4
     const desktopSlides = [];
     for (let i = 0; i < allProjects.length; i += 4) {
       desktopSlides.push(allProjects.slice(i, i + 4));
     }
-    
+
+    // For tablets, group projects into slides of 2
+    const tabletSlides = [];
+    for (let i = 0; i < allProjects.length; i += 2) {
+      tabletSlides.push(allProjects.slice(i, i + 2));
+    }
+
     return {
       individual: allProjects.map((project, index) => ({ project, index })),
+      tablet: tabletSlides,
       grouped: desktopSlides
     };
   };
 
-  const { individual, grouped } = createResponsiveSlides();
+  const { individual, tablet, grouped } = createResponsiveSlides();
   return (
     <>
-      {/* Mobile and tablet view - individual projects */}
-      <div className="block lg:hidden">
+      {/* Mobile view - individual projects */}
+      <div className="block md:hidden">
         <Swiper
           spaceBetween={15}
           breakpoints={{
@@ -128,45 +135,49 @@ const WorkSlider = () => {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 12,
-            },
           }}
           pagination={{
             clickable: true
           }}
           modules={[Pagination]}
-          className='h-[180px] xs:h-[200px] sm:h-[250px] md:h-[350px] mb-4 sm:mb-6 md:mb-8 max-w-none'>
-          
+          className='h-[220px] xs:h-[240px] sm:h-[290px] mb-4 sm:mb-6 max-w-none'
+          style={{
+            '--swiper-pagination-bottom': '0px',
+            '--swiper-pagination-bullet-inactive-color': '#ffffff40',
+            '--swiper-pagination-bullet-color': '#e879f9'
+          }}>
+
           {individual.map(({ project, index }) => (
             <SwiperSlide key={`mobile-${index}`}>
               <div className="w-full h-full px-2 sm:px-3">
                 <div className="relative rounded-lg overflow-hidden flex items-center justify-center group w-full h-full aspect-video max-w-full shadow-lg">
                   <div className="flex items-center justify-center relative overflow-hidden group w-full h-full">
                     <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700"></div> 
-                    
+                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700"></div>
+
                     <div className="absolute inset-0 flex flex-col justify-between p-3 xs:p-4 sm:p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="flex justify-between items-start gap-2">
                         <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg drop-shadow-lg leading-tight flex-1 pr-2">{project.title}</h3>
                         <div className="flex gap-2 flex-shrink-0">
-                          <a href={project.github} target="_blank" rel="noopener noreferrer" 
-                             className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer"
+                            className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
                             <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
                           </a>
                           <a href={project.live} target="_blank" rel="noopener noreferrer"
-                             className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
+                            className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
                             <FaExternalLinkAlt className="w-3 h-3 sm:w-4 sm:h-4" />
                           </a>
                         </div>
                       </div>
-                      
+
                       <div className="space-y-2">
+                        <p className="text-white/90 text-[9px] sm:text-[10px] leading-tight font-light drop-shadow-lg line-clamp-2 sm:line-clamp-3">
+                          {project.description.length > 80 ? `${project.description.substring(0, 80)}...` : project.description}
+                        </p>
                         <div className="flex flex-wrap gap-1.5 sm:gap-2">
                           {project.stack.map((tech, techIndex) => (
-                            <span key={techIndex} 
-                                  className="text-xs sm:text-sm bg-white/25 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/40 hover:bg-accent/40 hover:border-accent/60 hover:text-accent hover:scale-105 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 font-medium drop-shadow-sm whitespace-nowrap">
+                            <span key={techIndex}
+                              className="text-[10px] sm:text-xs leading-tight bg-white/25 text-white px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-white/40 hover:bg-accent/40 hover:border-accent/60 transition-all duration-300">
                               {tech}
                             </span>
                           ))}
@@ -174,6 +185,71 @@ const WorkSlider = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Tablet view - 2 projects per slide */}
+      <div className="hidden md:block lg:hidden">
+        <Swiper
+          spaceBetween={15}
+          slidesPerView={1}
+          pagination={{
+            clickable: true
+          }}
+          modules={[Pagination]}
+          className='h-[390px] mt-0 mb-2 max-w-none'
+          style={{
+            '--swiper-pagination-bottom': '0px',
+            '--swiper-pagination-bullet-inactive-color': '#ffffff40',
+            '--swiper-pagination-bullet-color': '#e879f9'
+          }}>
+
+          {tablet.map((projectPair, slideIndex) => (
+            <SwiperSlide key={`tablet-${slideIndex}`}>
+              <div className="w-full h-full px-3">
+                <div className="grid grid-cols-2 gap-4 h-full">
+                  {projectPair.map((project, index) => (
+                    <div key={index} className="relative rounded-lg overflow-hidden flex items-center justify-center group w-full h-full aspect-video max-w-full shadow-lg">
+                      <div className="flex items-center justify-center relative overflow-hidden group w-full h-full">
+                        <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700"></div>
+
+                        <div className="absolute inset-0 flex flex-col justify-between p-3 xs:p-4 sm:p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <div className="flex justify-between items-start gap-2">
+                            <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg drop-shadow-lg leading-tight flex-1 pr-2">{project.title}</h3>
+                            <div className="flex gap-2 flex-shrink-0">
+                              <a href={project.github} target="_blank" rel="noopener noreferrer"
+                                className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
+                                <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
+                              </a>
+                              <a href={project.live} target="_blank" rel="noopener noreferrer"
+                                className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
+                                <FaExternalLinkAlt className="w-3 h-3 sm:w-4 sm:h-4" />
+                              </a>
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            <p className="text-white/90 text-[9px] sm:text-[10px] leading-tight font-light drop-shadow-lg line-clamp-2 sm:line-clamp-3">
+                              {project.description.length > 80 ? `${project.description.substring(0, 80)}...` : project.description}
+                            </p>
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                              {project.stack.map((tech, techIndex) => (
+                                <span key={techIndex}
+                                  className="text-[10px] sm:text-xs leading-tight bg-white/25 text-white px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-white/40 hover:bg-accent/40 hover:border-accent/60 transition-all duration-300">
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </SwiperSlide>
@@ -199,8 +275,13 @@ const WorkSlider = () => {
             clickable: true
           }}
           modules={[Pagination]}
-          className='lg:h-[400px] xl:h-[450px] 2xl:h-[500px] mb-4 sm:mb-6 md:mb-8 max-w-none'>
-          
+          className='lg:h-[440px] xl:h-[490px] 2xl:h-[540px] mb-4 sm:mb-6 md:mb-8 max-w-none'
+          style={{
+            '--swiper-pagination-bottom': '0px',
+            '--swiper-pagination-bullet-inactive-color': '#ffffff40',
+            '--swiper-pagination-bullet-color': '#e879f9'
+          }}>
+
           {grouped.map((projectGroup, slideIndex) => (
             <SwiperSlide key={`desktop-${slideIndex}`}>
               <div className="w-full h-full px-4">
@@ -209,45 +290,48 @@ const WorkSlider = () => {
                     <div key={index} className="relative rounded-xl overflow-hidden group shadow-2xl hover:shadow-accent/20 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105">
                       <div className="relative w-full h-full aspect-video">
                         <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
-                        
+
                         {/* Gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-all duration-500"></div>
-                        
+
                         {/* Enhanced overlay with better positioning */}
                         <div className="absolute inset-0 flex flex-col justify-between p-4 xl:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-4">
                           {/* Top section */}
                           <div className="flex justify-between items-start gap-3">
                             <h3 className="text-white font-bold text-lg xl:text-xl 2xl:text-2xl drop-shadow-2xl leading-tight flex-1">{project.title}</h3>
                             <div className="flex gap-3 flex-shrink-0">
-                              <a href={project.github} target="_blank" rel="noopener noreferrer" 
-                                 className="text-white hover:text-accent hover:scale-125 transition-all duration-300 transform drop-shadow-lg p-2 rounded-full bg-white/10 hover:bg-accent/20">
+                              <a href={project.github} target="_blank" rel="noopener noreferrer"
+                                className="text-white hover:text-accent hover:scale-125 transition-all duration-300 transform drop-shadow-lg p-2 rounded-full bg-white/10 hover:bg-accent/20">
                                 <FaGithub className="w-5 h-5 xl:w-6 xl:h-6" />
                               </a>
                               <a href={project.live} target="_blank" rel="noopener noreferrer"
-                                 className="text-white hover:text-accent hover:scale-125 transition-all duration-300 transform drop-shadow-lg p-2 rounded-full bg-white/10 hover:bg-accent/20">
+                                className="text-white hover:text-accent hover:scale-125 transition-all duration-300 transform drop-shadow-lg p-2 rounded-full bg-white/10 hover:bg-accent/20">
                                 <FaExternalLinkAlt className="w-4 h-4 xl:w-5 xl:h-5" />
                               </a>
                             </div>
                           </div>
-                          
+
                           {/* Bottom section */}
                           <div className="space-y-3">
-                            <div className="flex flex-wrap gap-2 xl:gap-3">
-                              {project.stack.slice(0, 4).map((tech, techIndex) => (
-                                <span key={techIndex} 
-                                      className="text-xs xl:text-sm bg-white/20 backdrop-blur-sm text-white px-3 xl:px-4 py-1.5 xl:py-2 rounded-full border border-white/30 hover:bg-accent/30 hover:border-accent/50 hover:text-white hover:scale-110 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 font-semibold drop-shadow-lg whitespace-nowrap">
+                            <p className="text-white/90 text-xs xl:text-sm leading-relaxed font-light drop-shadow-lg line-clamp-2 xl:line-clamp-3">
+                              {project.description.length > 120 ? `${project.description.substring(0, 120)}...` : project.description}
+                            </p>
+                            <div className="flex flex-wrap gap-2 xl:gap-2.5">
+                              {project.stack.slice(0, project.stack.length <= 5 ? project.stack.length : 4).map((tech, techIndex) => (
+                                <span key={techIndex}
+                                  className="text-xs bg-white/20 backdrop-blur-sm text-white px-2.5 py-1 rounded-full border border-white/30 hover:bg-accent/30 hover:border-accent/50 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 font-medium drop-shadow-lg whitespace-nowrap max-w-[80px] text-center">
                                   {tech}
                                 </span>
                               ))}
-                              {project.stack.length > 4 && (
-                                <span className="text-xs xl:text-sm bg-white/20 backdrop-blur-sm text-white px-3 xl:px-4 py-1.5 xl:py-2 rounded-full border border-white/30 font-semibold drop-shadow-lg">
+                              {project.stack.length > 5 && (
+                                <span className="text-xs bg-white/20 backdrop-blur-sm text-white px-2.5 py-1 rounded-full border border-white/30 font-medium drop-shadow-lg max-w-[60px] text-center">
                                   +{project.stack.length - 4}
                                 </span>
                               )}
                             </div>
                           </div>
                         </div>
-                        
+
                         {/* Decorative corner accent */}
                         <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                       </div>
@@ -258,7 +342,7 @@ const WorkSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div >
     </>
   );
 
