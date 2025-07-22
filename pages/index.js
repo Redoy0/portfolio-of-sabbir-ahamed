@@ -13,48 +13,48 @@ import { fadeIn } from "../variants";
 import { useState, useEffect } from "react";
 
 const titles = [
-	"Problem Solver",
-	"Tech Enthusiast",
-	"Flutter Developer",
-	"Web Developer",
+  "Problem Solver",
+  "Tech Enthusiast",
+  "Flutter Developer",
+  "Web Developer",
 ];
 
 const titleVariants = {
-	initial: { opacity: 0, y: 20 },
-	animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-	exit: { opacity: 0, y: -20, transition: { duration: 0.5, ease: "easeIn" } },
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.5, ease: "easeIn" } },
 };
 
 const Home = () => {
-	const [currentTitle, setCurrentTitle] = useState(0);
+  const [currentTitle, setCurrentTitle] = useState(0);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentTitle((prev) => (prev + 1) % titles.length);
-		}, 2000);
-		return () => clearInterval(interval);
-	}, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitle((prev) => (prev + 1) % titles.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
-	return (
+  return (
     <div className="bg-primary/60 h-full">
-      {/* text */ }
-        <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 pt-8 sm:pt-8 md:pt-0 lg:pt-0">
-          <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto px-4 sm:px-6 lg:px-8">
-            {/* title */}
-          <motion.h1 
-		        variants={fadeIn("down", 0.2)}
+      {/* text */}
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 pt-8 sm:pt-8 md:pt-0 lg:pt-0">
+        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* title */}
+          <motion.h1
+            variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-			      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-4 sm:mb-6">
-            <span className="text-white/90 font-light">Hello, I'm</span>
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-4 sm:mb-6">
+            <span className="text-white/90 font-light">Hello, I&apos;m</span>
             <br />
             <span className="bg-gradient-to-r from-accent via-purple-400 to-pink-400 bg-clip-text text-transparent font-black tracking-tight">
               Sabbir Ahamed
             </span>
             <br />
             <div className="flex flex-wrap items-baseline justify-center xl:justify-start gap-2 sm:gap-3 mt-3 sm:mt-4">
-              <span className="text-white/90 text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium leading-none">I'm a</span>
+              <span className="text-white/90 text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium leading-none">I&apos;m a</span>
               <span className="relative inline-block min-w-[180px] sm:min-w-[200px]">
                 <AnimatePresence mode="wait">
                   <motion.span
@@ -73,16 +73,16 @@ const Home = () => {
             </div>
           </motion.h1>
           {/* subtitle */}
-          <motion.p 
-		  variants={fadeIn("down", 0.3)}
+          <motion.p
+            variants={fadeIn("down", 0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
-		  className="max-w-sm sm:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 mb-6 max-h-[900px]:mb-4 sm:mb-8 xl:mb-16 text-white/80 text-sm max-h-[900px]:text-xs sm:text-base md:text-lg xl:text-xl leading-relaxed font-light tracking-wide px-2 sm:px-0">
-            I'm a <span className="text-accent font-semibold">passionate programmer</span> and{" "}
+            className="max-w-sm sm:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 mb-6 max-h-[900px]:mb-4 sm:mb-8 xl:mb-16 text-white/80 text-sm max-h-[900px]:text-xs sm:text-base md:text-lg xl:text-xl leading-relaxed font-light tracking-wide px-2 sm:px-0">
+            I&apos;m a <span className="text-accent font-semibold">passionate programmer</span> and{" "}
             <span className="text-accent font-semibold">problem solver</span> that enjoys breaking down{" "}
             <span className="text-accent font-semibold">difficult problems</span> and coming up with{" "}
-            <span className="text-accent font-semibold">creative solutions</span> that stretch the bounds of what's possible.
+            <span className="text-accent font-semibold">creative solutions</span> that stretch the bounds of what&apos;s possible.
           </motion.p>
           {/* Btn */}
           <div className="flex flex-col sm:flex-row items-center justify-center xl:hidden relative gap-3 max-h-[900px]:gap-2 px-4">
@@ -139,24 +139,24 @@ const Home = () => {
       <div className="w-full sm:w-[800px] md:w-[1000px] lg:w-[1200px] h-full absolute right-0 bottom-0 overflow-hidden">
         {/* bg image */}
         <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0'>
-          </div>
-          {/* particles */}
-          <div className="hidden sm:block">
-            <ParticlesContainer />
-          </div>
-          {/* avater Img */}
-          <motion.div 
-            variants={fadeIn("up", 0.5)}
-            initial="hidden"
-            animate="show"
-            exit="hidden" 
-            transition={{duration:1, ease: "easeInOut"}}
-            className="w-full h-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[737px] max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[678px] absolute -bottom-20 sm:-bottom-24 md:-bottom-28 lg:bottom-0 left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none lg:right-[8%]">
-            <Avatar />
-          </motion.div>
         </div>
-
+        {/* particles */}
+        <div className="hidden sm:block">
+          <ParticlesContainer />
+        </div>
+        {/* avater Img */}
+        <motion.div
+          variants={fadeIn("up", 0.5)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="w-full h-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[737px] max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[678px] absolute -bottom-20 sm:-bottom-24 md:-bottom-28 lg:bottom-0 left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none lg:right-[8%]">
+          <Avatar />
+        </motion.div>
       </div>
+
+    </div>
   );
 };
 
