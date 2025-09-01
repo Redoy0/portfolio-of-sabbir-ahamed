@@ -7,13 +7,18 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 // icons
 import {
-  RxCrop,
   RxDesktop,
   RxPencil2,
-  RxReader,
-  RxRocket,
   RxArrowTopRight,
 } from 'react-icons/rx';
+
+// Additional icons for services
+import {
+  FaCode,
+  FaMobile,
+  FaBrain,
+  FaPaintBrush
+} from 'react-icons/fa';
 
 // import required modules
 import { FreeMode, Pagination } from 'swiper';
@@ -21,29 +26,24 @@ import { FreeMode, Pagination } from 'swiper';
 //service data
 const serviceData = [
   {
-    icon: <RxCrop />,
-    title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <FaCode />,
+    title: 'Web Development',
+    description: 'Creating responsive, modern web applications using the latest technologies and frameworks.',
   },
   {
-    icon: <RxPencil2 />,
-    title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <FaPaintBrush />,
+    title: 'UI/UX Design',
+    description: 'Designing intuitive user interfaces and seamless user experiences that delight and engage users.',
   },
   {
-    icon: <RxDesktop />,
-    title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <FaMobile />,
+    title: 'Flutter Development',
+    description: 'Building beautiful, high-performance mobile applications for both iOS and Android platforms.',
   },
   {
-    icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    icon: <RxRocket />,
-    title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <FaBrain />,
+    title: 'Machine Learning',
+    description: 'Developing intelligent solutions using machine learning algorithms and data analysis techniques.',
   },
 ];
 
@@ -81,7 +81,7 @@ const ServiceSlider = () => {
               </div>
               {/* arrow */}
               <div className='text-3xl'>
-                <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300"/>
+                <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
               </div>
             </div>
           </SwiperSlide>
