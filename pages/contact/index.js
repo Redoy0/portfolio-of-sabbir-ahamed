@@ -36,17 +36,17 @@ const Contact = () => {
             <input
               type="text"
               placeholder="name"
-              className="input" />
+              className="input" required />
             <input
-              type="text"
+              type="email"
               placeholder="email"
-              className="input" />
+              className="input" required />
           </div>
           <input
             type="text"
             placeholder="subject"
-            className="input" />
-          <textarea placeholder="message" className="textarea"></textarea>
+            className="input" required />
+          <textarea placeholder="message" className="textarea" required></textarea>
           <button className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group">
             <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">Let's talk</span>
             <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
