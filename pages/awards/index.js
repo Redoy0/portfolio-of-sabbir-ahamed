@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // icons
 import { FaAward, FaCertificate, FaTrophy, FaMedal, FaBook, FaExternalLinkAlt } from "react-icons/fa";
@@ -79,21 +79,34 @@ const awardsData = [
   },
 ];
 
-const Testimonials = () => {
+const Awards = () => {
   const [index, setIndex] = useState(0);
   const [activeSection, setActiveSection] = useState("awards");
+  const scrollAreaRef = useRef(null);
 
   // Combine both data arrays for navigation
   const allSections = [...publicationsData, ...awardsData];
   const currentData = activeSection === "publications" ? publicationsData : awardsData;
 
+  // Always scroll the content area to the top when switching tabs
+  useEffect(() => {
+    if (scrollAreaRef.current) {
+      try {
+        // Reset to top; use standard behavior value for compatibility
+        scrollAreaRef.current.scrollTo({ top: 0, behavior: "auto" });
+      } catch {
+        scrollAreaRef.current.scrollTop = 0;
+      }
+    }
+  }, [activeSection]);
+
   return (
     <div className='min-h-screen bg-primary/30 py-20 md:py-32 text-center xl:text-left overflow-hidden'>
       <Circles />
 
-      <div className='container mx-auto min-h-screen flex flex-col items-center xl:flex-row gap-x-8 gap-y-8'>
+      <div className='container mx-auto min-h-screen flex flex-col items-center xl:flex-row gap-x-8 gap-y-0 sm:gap-y-2 xl:gap-y-8'>
         {/* title section */}
-        <div className="flex-1 flex flex-col justify-center px-4 xl:px-0 max-w-xl xl:max-w-none">
+        <div className="flex-none xl:flex-1 flex flex-col justify-start xl:justify-center px-4 xl:px-0 max-w-xl xl:max-w-none mt-4 sm:mt-4 xl:mt-0 mb-4 sm:mb-4 xl:mb-12">
           <motion.h2
             variants={fadeIn('right', 0.2)}
             initial="hidden"
@@ -114,7 +127,7 @@ const Testimonials = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-sm sm:text-base leading-relaxed text-center xl:text-left text-white/90 sm:text-white/80"
+            className="max-w-[500px] mx-auto xl:mx-0 px-2 xl:px-0 text-sm sm:text-base leading-relaxed text-center xl:text-left text-white/90 sm:text-white/80"
           >
             Academic contributions, research publications, and recognition that showcase my expertise and dedication to continuous learning in technology and development.
           </motion.p>
@@ -125,7 +138,7 @@ const Testimonials = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-4 xl:mb-8"
           >
             <div className="flex flex-1 gap-4 xl:gap-8 justify-center xl:justify-start">
               {/* Publications */}
@@ -173,7 +186,7 @@ const Testimonials = () => {
           className="flex flex-col w-full xl:max-w-[55%] h-auto px-4 xl:px-0"
         >
           {/* Section navigation tabs */}
-          <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-6 text-sm sm:text-base">
+          <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-3 sm:mb-4 xl:mb-6 text-sm sm:text-base">
             <div
               className={`${activeSection === "publications" &&
                 "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
@@ -195,10 +208,10 @@ const Testimonials = () => {
           </div>
 
           {/* Scrollable content area */}
-          <div className="max-h-[60vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
+          <div ref={scrollAreaRef} className="max-h-[60vh] overflow-y-auto p-2 scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
             {/* Publications Section */}
             {activeSection === "publications" && (
-              <div className="py-2 xl:py-6 flex flex-col gap-y-4 xl:gap-y-6 items-center xl:items-start">
+              <div className="py-0 xl:py-6 xl:m-4 flex flex-col gap-y-4 xl:gap-y-6 items-center xl:items-start">
                 {publicationsData[0].info.map((item, itemIndex) => {
                   return (
                     <div key={itemIndex} className="flex-1 flex flex-col w-full gap-x-2 items-center text-white/60">
@@ -262,7 +275,7 @@ const Testimonials = () => {
 
             {/* Awards & Certificates Section */}
             {activeSection === "awards" && (
-              <div className="py-2 xl:py-6 grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
+              <div className="py-0 xl:py-6 grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
                 {awardsData[0].info.map((item, itemIndex) => {
                   return (
                     <div key={itemIndex} className="flex flex-col text-white/60 h-fit">
@@ -320,4 +333,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default Awards;

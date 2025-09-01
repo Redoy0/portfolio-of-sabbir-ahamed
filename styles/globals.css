@@ -49,3 +49,44 @@
     @apply w-full h-[180px] p-6 rounded-lg resize-none;
   }
 }
+
+/* Custom scrollbar styles for Publications & Achievements section */
+@layer utilities {
+  /* Webkit browsers (Chrome, Safari, Edge) */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #f13024;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(241, 48, 36, 0.8);
+  }
+
+  .scrollbar-track-white\/10::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .scrollbar-thumb-accent::-webkit-scrollbar-thumb {
+    background: #f13024;
+  }
+
+  .hover\:scrollbar-thumb-accent\/80:hover::-webkit-scrollbar-thumb {
+    background: rgba(241, 48, 36, 0.8);
+  }
+
+  /* Firefox */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #f13024 rgba(255, 255, 255, 0.1);
+  }
+}

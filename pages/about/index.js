@@ -97,25 +97,6 @@ const aboutData = [
       },
     ],
   },
-  {
-    title: "certificates",
-    info: [
-      {
-        title: "Web Design & Development",
-        organization: "WDD",
-        type: "Professional",
-        description: "Comprehensive certification covering modern web development practices and design principles.",
-        year: "2022",
-      },
-      {
-        title: "Take-Off Programming Contest",
-        organization: "Programming Contest",
-        type: "Achievement",
-        description: "Successfully participated and reached the final round of the competitive programming contest.",
-        year: "Fall 2022",
-      },
-    ],
-  },
 ];
 
 // component
@@ -172,12 +153,12 @@ const About = () => {
             Built a solid foundation in CSE with expertise in programming, problem-solving, and crafting digital solutions. Experienced through internships, coding contests, and a passion for impactful tech.
           </motion.p>
           {/* counters */}
-          <motion.div 
-          variants={fadeIn("right", 0.6)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+          <motion.div
+            variants={fadeIn("right", 0.6)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
           >
             <div className="flex flex-1 xl:gap-6">
               {/* experience */}
@@ -221,12 +202,12 @@ const About = () => {
           </motion.div>
         </div>
         {/* info */}
-        <motion.div 
-        variants={fadeIn("left", 0.4)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-         className="flex flex-col w-full xl:max-w-[48%] h-auto xl:h-[480px] px-4 xl:px-0">
+        <motion.div
+          variants={fadeIn("left", 0.4)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="flex flex-col w-full xl:max-w-[48%] h-auto xl:h-[480px] px-4 xl:px-0">
           <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 text-sm sm:text-base">
             {aboutData.map((item, itemIndex) => {
               return (
@@ -260,7 +241,7 @@ const About = () => {
                         </h4>
                         <div className="flex gap-3 flex-wrap pl-5">
                           {skillCategory.icons.map((iconObj, iconIndex) => (
-                            <div 
+                            <div
                               key={iconIndex}
                               className="text-2xl text-white hover:text-accent transition-all duration-300 cursor-pointer transform hover:scale-110 hover:rotate-3 relative group"
                             >
@@ -286,7 +267,7 @@ const About = () => {
                     <div className="font-light mb-3 text-center text-accent text-sm md:text-base">{skillCategory.title}</div>
                     <div className="flex gap-x-3 md:gap-x-4 flex-wrap justify-center max-w-lg md:max-w-2xl">
                       {skillCategory.icons.map((iconObj, iconIndex) => (
-                        <div 
+                        <div
                           key={iconIndex}
                           className="text-xl md:text-2xl text-white hover:text-accent transition-all duration-300 cursor-pointer transform hover:scale-110 hover:rotate-3 relative group"
                         >
@@ -320,12 +301,12 @@ const About = () => {
                           {item.company || item.institution || item.organization}
                         </div>
                         <p className="text-white/70 text-sm mb-4 leading-relaxed">{item.description}</p>
-                        
+
                         {/* Experience Technologies */}
                         {item.technologies && (
                           <div className="flex flex-wrap gap-2">
                             {item.technologies.map((tech, techIndex) => (
-                              <span 
+                              <span
                                 key={techIndex}
                                 className="text-xs bg-white/5 text-white/80 px-2 py-1 rounded-md border border-white/10 hover:border-accent/30 hover:text-accent transition-all duration-300"
                               >
@@ -334,7 +315,7 @@ const About = () => {
                             ))}
                           </div>
                         )}
-                        
+
                         {/* Education Duration & Graduation */}
                         {item.duration && (
                           <div className="flex flex-col gap-1 mt-2">
@@ -344,7 +325,7 @@ const About = () => {
                             )}
                           </div>
                         )}
-                        
+
                         {/* Certificate Year */}
                         {item.year && (
                           <div className="mt-2">
@@ -369,7 +350,7 @@ const About = () => {
                       {item.technologies && (
                         <div className="flex flex-wrap gap-1 mt-2 justify-center">
                           {item.technologies.map((tech, techIndex) => (
-                            <span 
+                            <span
                               key={techIndex}
                               className="text-xs bg-white/5 text-white/80 px-2 py-1 rounded border border-white/10"
                             >
