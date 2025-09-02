@@ -41,7 +41,7 @@ const Contact = () => {
 
     // EmailJS configuration
     const serviceId = 'service_portfolio'; // You'll need to replace this
-    const templateId = 'template_portfolio'; // You'll need to replace this
+    const templateId = 'template_contact'; // You'll need to replace this
     const publicKey = 'q1FugPxOI_BtSoljT'; // You'll need to replace this
 
     // Template parameters

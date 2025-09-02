@@ -20,7 +20,8 @@ function MyApp({ Component, pageProps }) {
         <title>Sabbir Ahamed - Web Developer</title>
         <meta name="description" content="Sabbir Ahamed - Professional Web Developer specializing in modern web technologies and creative digital solutions." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <AnimatePresence mode='wait'>
