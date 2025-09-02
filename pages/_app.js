@@ -4,12 +4,13 @@ import Head from 'next/head';
 //components
 import Layout from '../components/Layout';
 import Transition from '../components/Transition';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 //router
 import { useRouter } from 'next/router';
 
 //farmer motion
-import { AnimatePresence,motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
           <motion.div key={router.route} className='h-full'>
             <Transition />
             <Component {...pageProps} />
+            <SpeedInsights />
           </motion.div>
         </AnimatePresence>
       </Layout>
