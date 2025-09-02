@@ -8,7 +8,7 @@ import Circles from '../../components/Circles';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
-const Work = () => {
+const Projects = () => {
   return (
     <div className='h-full bg-primary/30 py-20 md:py-32 lg:py-32 xl:py-36 flex items-center'>
       <Circles />
@@ -49,4 +49,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;
