@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // icons
-import { FaAward, FaCertificate, FaTrophy, FaMedal, FaBook, FaExternalLinkAlt } from "react-icons/fa";
+import { FaAward, FaCertificate, FaTrophy, FaMedal, FaBook, FaExternalLinkAlt, FaListOl, FaFileAlt } from "react-icons/fa";
 
 // framer motion
 import { motion } from "framer-motion";
@@ -36,44 +36,56 @@ const awardsData = [
     title: "awards & certificates",
     info: [
       {
-        title: "NASA Space Apps Challenge",
-        organization: "NASA",
-        type: "Hackathon",
-        description: "Selected as a National Finalist (Top 50 teams in Bangladesh) in the world's largest annual hackathon.",
-        year: "2024",
-        icon: <FaTrophy />,
-      },
-      {
-        title: "Take-Off Programming Contest",
-        organization: "5th Place Winner",
-        type: "Achievement",
-        description: "Achieved 5th place among numerous competitors in the Fall 2022 contest.",
-        year: "Fall 2022",
-        icon: <FaTrophy />,
-      },
-      {
-        title: "ICPC Asia Dhaka Regional",
-        organization: "ICPC Foundation",
-        type: "Contest",
-        description: "Qualified for and competed in the prestigious 2024 International Collegiate Programming Contest (ICPC) preliminary round.",
-        year: "2024",
-        icon: <FaTrophy />,
-      },
-      {
         title: "Web Design & Development",
         organization: "WDD",
         type: "Professional",
         description: "Comprehensive certification covering modern web development practices and design principles.",
         year: "2022",
         icon: <FaCertificate />,
+        standingUrl: "",
+        certificateUrl: "https://drive.google.com/file/d/1dIkJuo02J_db14wcwLn9dIILQSMXqTlo/view",
       },
       {
+        title: "NASA Space Apps Challenge",
+        organization: "NASA",
+        type: "Hackathon",
+        description: "Selected as a National Finalist (Top 50 teams in Bangladesh) in the world's largest annual hackathon.",
+        year: "2024",
+        icon: <FaTrophy />,
+        standingUrl: "",
+        certificateUrl: "https://drive.google.com/file/d/1BxhMkzKoPkt-ULkcopLe8gy_gedZv77M/view?usp=sharing",
+      },
+
+      {
         title: "Take-Off Programming Contest",
-        organization: "14th Place (Slot B), 21st Final",
+        organization: "14th Place (Slot B), 21st Place(Final",
         type: "Achievement",
         description: "Secured 14th place in Slot B and ranked 21st in the Final Round of the Fall 2022 contest.",
         year: "Fall 2022",
         icon: <FaTrophy />,
+        standingUrl: "https://toph.co/c/diu-take-off-fall-2022-slot-b/standings",
+        certificateUrl: "https://drive.google.com/file/d/13ivKHc318vL7m56K0bQ8KUfI_ifIpgsp/view",
+      },
+      {
+        title: "ICPC Asia Dhaka Regional",
+        organization: "ICPC Foundation",
+        type: "Contest",
+        description: "Participated and competed in the prestigious 2022 International Collegiate Programming Contest (ICPC) preliminary round.",
+        year: "2022",
+        icon: <FaTrophy />,
+        standingUrl: "",
+        certificateUrl: "https://drive.google.com/file/d/1CyythJB6yDRY5vpUWiVvvaO_4_jM9sIz/view",
+      },
+
+      {
+        title: "Take-Off Programming Contest",
+        organization: "5th Place",
+        type: "Achievement",
+        description: "Achieved 5th place among numerous competitors in the Fall 2022 contest.",
+        year: "Fall 2022",
+        icon: <FaTrophy />,
+        standingUrl: "https://toph.co/c/diu-take-off-fall-2022-mock/standings",
+        certificateUrl: "https://drive.google.com/file/d/13ivKHc318vL7m56K0bQ8KUfI_ifIpgsp/view",
       },
     ],
   },
@@ -127,7 +139,7 @@ const Awards = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-[500px] mx-auto xl:mx-0 px-2 xl:px-0 text-sm sm:text-base leading-relaxed text-center xl:text-left text-white/90 sm:text-white/80"
+            className="max-w-[500px] mx-auto xl:mx-0 px-2 xl:px-2 text-sm sm:text-base leading-relaxed text-center xl:text-left text-white/90 sm:text-white/80"
           >
             Academic contributions, research publications, and recognition that showcase my expertise and dedication to continuous learning in technology and development.
           </motion.p>
@@ -208,7 +220,7 @@ const Awards = () => {
           </div>
 
           {/* Scrollable content area */}
-          <div ref={scrollAreaRef} className="max-h-[60vh] overflow-y-auto p-2 scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
+          <div ref={scrollAreaRef} className="max-h-[60vh] overflow-y-auto  scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
             {/* Publications Section */}
             {activeSection === "publications" && (
               <div className="py-0 xl:py-6 xl:m-4 flex flex-col gap-y-4 xl:gap-y-6 items-center xl:items-start">
@@ -217,7 +229,7 @@ const Awards = () => {
                     <div key={itemIndex} className="flex-1 flex flex-col w-full gap-x-2 items-center text-white/60">
                       {/* Desktop view */}
                       <div className="hidden xl:block w-full max-w-2xl">
-                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20">
+                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 ">
                           <div className="flex items-start justify-between mb-4">
                             <div className="flex items-start flex-1">
                               <div className="text-accent text-2xl mr-3 mt-1 flex-shrink-0">{item.icon}</div>
@@ -281,7 +293,7 @@ const Awards = () => {
                     <div key={itemIndex} className="flex flex-col text-white/60 h-fit">
                       {/* Desktop view */}
                       <div className="hidden xl:block w-full">
-                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 h-full flex flex-col">
+                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 h-full flex flex-col mx-2 xl:mx-3">
                           <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center flex-1">
                               <div className="text-accent text-2xl mr-3 flex-shrink-0">{item.icon}</div>
@@ -297,11 +309,52 @@ const Awards = () => {
 
                           <p className="text-white/70 text-sm mb-4 leading-relaxed flex-1">{item.description}</p>
 
-                          <div className="mt-auto">
+                          <div className="mt-auto flex items-center justify-between gap-3 pt-2">
                             <span className="text-white/60 text-xs bg-white/5 px-2 py-1 rounded flex items-center w-fit">
                               <FaMedal className="mr-1 text-accent" />
                               {item.year}
                             </span>
+                            <div className="flex items-center gap-2">
+                              {item.standingUrl ? (
+                                <a
+                                  href={item.standingUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center text-xs bg-white/10 hover:bg-white/20 text-white px-2.5 py-1.5 rounded-md transition-colors"
+                                  title="View standing/ranking"
+                                >
+                                  <FaListOl className="mr-1" /> Standing
+                                </a>
+                              ) : (
+                                <button
+                                  className="inline-flex items-center text-xs bg-white/5 text-white/40 px-2.5 py-1.5 rounded-md cursor-not-allowed"
+                                  title="Standing not available"
+                                  disabled
+                                >
+                                  <FaListOl className="mr-1" /> Standing
+                                </button>
+                              )}
+
+                              {item.certificateUrl ? (
+                                <a
+                                  href={item.certificateUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center text-xs bg-accent/90 hover:bg-accent text-white px-2.5 py-1.5 rounded-md transition-colors"
+                                  title="View certificate"
+                                >
+                                  <FaFileAlt className="mr-1" /> Certificate
+                                </a>
+                              ) : (
+                                <button
+                                  className="inline-flex items-center text-xs bg-white/5 text-white/40 px-2.5 py-1.5 rounded-md cursor-not-allowed"
+                                  title="Certificate not available"
+                                  disabled
+                                >
+                                  <FaFileAlt className="mr-1" /> Certificate
+                                </button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -315,9 +368,40 @@ const Awards = () => {
                           </div>
                           <div className="text-accent text-sm md:text-base mb-2">{item.organization}</div>
                           <div className="text-white/70 text-xs md:text-sm mb-3 leading-relaxed">{item.description}</div>
-                          <div className="flex items-center justify-center text-white/50 text-xs md:text-sm">
-                            <FaMedal className="mr-1 text-accent" />
-                            {item.year}
+                          <div className="flex items-center justify-between gap-2 text-xs md:text-sm mt-1">
+                            <span className="flex items-center text-white/60 bg-white/5 px-2 py-1 rounded">
+                              <FaMedal className="mr-1 text-accent" /> {item.year}
+                            </span>
+                            <div className="flex items-center gap-2">
+                              {item.standingUrl ? (
+                                <a
+                                  href={item.standingUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-2 py-1 rounded-md transition-colors"
+                                >
+                                  <FaListOl className="mr-1" /> Standing
+                                </a>
+                              ) : (
+                                <button className="inline-flex items-center bg-white/5 text-white/40 px-2 py-1 rounded-md cursor-not-allowed" disabled>
+                                  <FaListOl className="mr-1" /> Standing
+                                </button>
+                              )}
+                              {item.certificateUrl ? (
+                                <a
+                                  href={item.certificateUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center bg-accent/90 hover:bg-accent text-white px-2 py-1 rounded-md transition-colors"
+                                >
+                                  <FaFileAlt className="mr-1" /> Certificate
+                                </a>
+                              ) : (
+                                <button className="inline-flex items-center bg-white/5 text-white/40 px-2 py-1 rounded-md cursor-not-allowed" disabled>
+                                  <FaFileAlt className="mr-1" /> Certificate
+                                </button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
