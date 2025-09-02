@@ -16,20 +16,20 @@ const Projects = () => {
         <div className='flex flex-col lg:flex-row gap-x-4 md:gap-x-6 lg:gap-x-8'>
           {/* text */}
           <div className='text-center flex lg:w-[35vw] xl:w-[30vw] flex-col lg:text-left mb-6 md:mb-4 lg:mb-0'>
-            <motion.h2 
-            variants={fadeIn('up', 0.2)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className='h2 lg:mt-8 xl:mt-12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
+            <motion.h2
+              variants={fadeIn('up', 0.2)}
+              initial='hidden'
+              animate='show'
+              exit='hidden'
+              className='h2 lg:mt-8 xl:mt-12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
               My  <span className='text-accent'>Projects.</span>
             </motion.h2>
-            <motion.p 
-            variants={fadeIn('up', 0.4)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className='mb-4 md:mb-6 max-w-[400px] md:max-w-[500px] lg:max-w-none mx-auto lg:mx-0 text-sm md:text-base lg:text-lg leading-relaxed'>
+            <motion.p
+              variants={fadeIn('up', 0.4)}
+              initial='hidden'
+              animate='show'
+              exit='hidden'
+              className='mb-4 md:mb-6 max-w-[400px] md:max-w-[500px] lg:max-w-none mx-auto lg:mx-0 text-sm md:text-base lg:text-lg leading-relaxed'>
               Explore my portfolio featuring a diverse range of innovative projects—spanning cutting-edge web development, real-time mobile apps, machine learning integrations, and impactful digital solutions. Each project highlights modern tech stacks, clean UI/UX, and a strong focus on performance, scalability, and user experience.
             </motion.p>
           </div>
@@ -38,8 +38,8 @@ const Projects = () => {
             animate='show'
             exit='hidden'
             className='w-full lg:max-w-[60%] xl:max-w-[65%]'>
-          {/* slider */}
-          <WorkSlider />
+            {/* slider */}
+            <WorkSlider />
 
           </motion.div>
         </div>
