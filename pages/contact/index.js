@@ -79,9 +79,18 @@ const Contact = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="h2 text-center mb-12">
+          className="h2 text-center mb-4">
           Let&rsquo;s <span className="text-accent">connect. </span>
         </motion.h2>
+        <motion.p
+          variants={fadeIn('up', 0.3)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="max-w-[620px] mx-auto xl:mx-0 mb-8 px-4 xl:px-0 text-white/80 text-sm sm:text-base leading-relaxed"
+        >
+          Have a question, collaboration idea, or just want to say hello? Fill out the form and I&rsquo;ll get back within 24-48 hours.   
+        </motion.p>
         {/* form */}
         <motion.form
           ref={form}
@@ -148,7 +157,7 @@ const Contact = () => {
             disabled={isLoading}
             className={`btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}>
             <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
-              {isLoading ? 'Sending...' : "Let&rsquo;s talk"}
+              {isLoading ? 'Sending...' : "Let's talk"}
             </span>
             <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
           </button>
