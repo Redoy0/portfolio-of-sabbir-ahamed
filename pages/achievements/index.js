@@ -91,7 +91,7 @@ const awardsData = [
   },
 ];
 
-const Awards = () => {
+const Achievements = () => {
   const [index, setIndex] = useState(0);
   const [activeSection, setActiveSection] = useState("awards");
   const scrollAreaRef = useRef(null);
@@ -200,15 +200,6 @@ const Awards = () => {
           {/* Section navigation tabs */}
           <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-3 sm:mb-4 xl:mb-6 text-sm sm:text-base">
             <div
-              className={`${activeSection === "publications" &&
-                "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0 hover:text-accent transition-colors duration-300`}
-              onClick={() => setActiveSection("publications")}
-            >
-              <FaBook className="inline mr-2" />
-              Publications
-            </div>
-            <div
               className={`${activeSection === "awards" &&
                 "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
                 } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0 hover:text-accent transition-colors duration-300`}
@@ -217,6 +208,16 @@ const Awards = () => {
               <FaAward className="inline mr-2" />
               Awards & Certificates
             </div>
+            <div
+              className={`${activeSection === "publications" &&
+                "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
+                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0 hover:text-accent transition-colors duration-300`}
+              onClick={() => setActiveSection("publications")}
+            >
+              <FaBook className="inline mr-2" />
+              Publications
+            </div>
+
           </div>
 
           {/* Scrollable content area */}
@@ -234,15 +235,9 @@ const Awards = () => {
                             <div className="flex items-start flex-1">
                               <div className="text-accent text-2xl mr-3 mt-1 flex-shrink-0">{item.icon}</div>
                               <div className="flex-1">
-                                <a
-                                  href={item.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-white font-semibold text-lg hover:text-accent transition-colors duration-300 cursor-pointer leading-tight block"
-                                >
+                                <div className="text-white font-semibold text-lg leading-tight block">
                                   {item.title}
-                                  <FaExternalLinkAlt className="inline ml-2 text-sm" />
-                                </a>
+                                </div>
                               </div>
                             </div>
                             <span className="text-accent text-xs bg-accent/20 px-3 py-1.5 rounded-full whitespace-nowrap flex-shrink-0 ml-3">{item.type}</span>
@@ -254,7 +249,24 @@ const Awards = () => {
                             <em>{item.journal}</em> ({item.year})
                           </div>
                           <div className="text-white/60 text-xs mb-3">{item.volume}</div>
-                          <div className="text-xs text-accent/80">DOI: {item.doi}</div>
+                          <div className="text-xs text-accent/80 mb-4">DOI: {item.doi}</div>
+
+                          {/* Actions */}
+                          <div className="mt-auto flex items-center justify-between gap-3 pt-2">
+                            <span className="text-white/60 text-xs bg-white/5 px-2 py-1 rounded flex items-center w-fit">
+                              <FaMedal className="mr-1 text-accent" />
+                              {item.year}
+                            </span>
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-xs bg-accent/90 hover:bg-accent text-white px-2.5 py-1.5 rounded-md transition-colors"
+                              title="View paper"
+                            >
+                              <FaExternalLinkAlt className="mr-1" /> Read Paper
+                            </a>
+                          </div>
                         </div>
                       </div>
 
@@ -263,20 +275,28 @@ const Awards = () => {
                         <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-4 hover:border-accent/40 transition-all duration-300 w-full">
                           <div className="flex items-center justify-center mb-3">
                             <div className="text-accent text-xl mr-2">{item.icon}</div>
-                            <a
-                              href={item.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="font-light text-base md:text-lg hover:text-accent transition-colors duration-300 text-center"
-                            >
+                            <div className="font-light text-base md:text-lg text-center">
                               {item.title}
-                              <FaExternalLinkAlt className="inline ml-1 text-xs" />
-                            </a>
+                            </div>
                           </div>
                           <div className="text-white/70 text-xs md:text-sm mb-2">{item.authors}</div>
                           <div className="text-accent text-xs md:text-sm mb-2"><em>{item.journal}</em> ({item.year})</div>
                           <div className="text-white/60 text-xs mb-2">{item.volume}</div>
-                          <div className="text-xs text-accent/80">DOI: {item.doi}</div>
+                          <div className="text-xs text-accent/80 mb-3">DOI: {item.doi}</div>
+
+                          <div className="flex items-center justify-between gap-2 text-xs md:text-sm mt-1">
+                            <span className="flex items-center text-white/60 bg-white/5 px-2 py-1 rounded">
+                              <FaMedal className="mr-1 text-accent" /> {item.year}
+                            </span>
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center bg-accent/90 hover:bg-accent text-white px-2 py-1 rounded-md transition-colors"
+                            >
+                              <FaExternalLinkAlt className="mr-1" /> View Paper
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -417,4 +437,4 @@ const Awards = () => {
   );
 };
 
-export default Awards;
+export default Achievements;

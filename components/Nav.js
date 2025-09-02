@@ -15,8 +15,8 @@ export const navData = [
   { name: 'work', path: '/work', icon: <HiViewColumns /> },
   { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
   {
-    name: 'awards',
-    path: '/awards',
+    name: 'Achievements',
+    path: '/achievements',
     icon: <HiChatBubbleBottomCenterText />,
   },
   {
@@ -38,36 +38,35 @@ const Nav = () => {
   const pathname = router.pathname;
 
   return (
-  <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
-    {/* inner */}
-    <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-2 sm:px-3 md:px-4 lg:px-40 xl:px-0 h-[60px] sm:h-[65px] md:h-[70px] lg:h-[80px] xl:h-max py-4 sm:py-5 md:py-6 lg:py-8 bg-white/10 backdrop-blur-sm text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-xl xl:rounded-full'>
-      {navData.map((link, index) => {
-        return (
-          <Link
-            className={`relative flex items-center group hover:text-accent transition-all duration-300 ${
-              link.path === pathname ? 'text-accent' : ''
-            }`}
-            href={link.path}
-            key={index}
-          >
-            {/* tooltip */}
-            <div className='absolute pr-14 right-0 hidden xl:group-hover:flex'>
-              <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
-                <div className='text-[12px] leading-none font-semibold capitalize'>{link.name}
-                </div>
-                {/* triangle */}
-                <div className='border-solid border-1-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2'>
+    <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
+      {/* inner */}
+      <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-2 sm:px-3 md:px-4 lg:px-40 xl:px-0 h-[60px] sm:h-[65px] md:h-[70px] lg:h-[80px] xl:h-max py-4 sm:py-5 md:py-6 lg:py-8 bg-white/10 backdrop-blur-sm text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-xl xl:rounded-full'>
+        {navData.map((link, index) => {
+          return (
+            <Link
+              className={`relative flex items-center group hover:text-accent transition-all duration-300 ${link.path === pathname ? 'text-accent' : ''
+                }`}
+              href={link.path}
+              key={index}
+            >
+              {/* tooltip */}
+              <div className='absolute pr-14 right-0 hidden xl:group-hover:flex'>
+                <div className='bg-white relative flex text-primary items-center p-[6px] rounded-[3px]'>
+                  <div className='text-[12px] leading-none font-semibold capitalize'>{link.name}
+                  </div>
+                  {/* triangle */}
+                  <div className='border-solid border-1-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2'>
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* icon */}
+              {/* icon */}
 
-            <div>{link.icon}</div>
-          </Link>
-        );
+              <div>{link.icon}</div>
+            </Link>
+          );
         })}
-    </div>
-  </nav>
+      </div>
+    </nav>
   );
 };
 
