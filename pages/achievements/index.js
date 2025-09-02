@@ -30,7 +30,7 @@ const publicationsData = [
   },
 ];
 
-// Awards and Certificates data
+// Achievements and Certificates data
 const awardsData = [
   {
     title: "awards & certificates",
