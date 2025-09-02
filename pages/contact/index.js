@@ -80,7 +80,7 @@ const Contact = () => {
           animate="show"
           exit="hidden"
           className="h2 text-center mb-12">
-          Let's <span className="text-accent">connect. </span>
+          Let&rsquo;s <span className="text-accent">connect. </span>
         </motion.h2>
         {/* form */}
         <motion.form
@@ -95,7 +95,7 @@ const Contact = () => {
           {/* Status Messages */}
           {status === 'success' && (
             <div className="bg-green-500/20 border border-green-500/50 text-green-400 px-4 py-2 rounded-lg text-center">
-              Message sent successfully! I'll get back to you soon.
+              Message sent successfully! I&rsquo;ll get back to you soon.
             </div>
           )}
           {status === 'error' && (
@@ -148,7 +148,7 @@ const Contact = () => {
             disabled={isLoading}
             className={`btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}>
             <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
-              {isLoading ? 'Sending...' : "Let's talk"}
+              {isLoading ? 'Sending...' : "Let&rsquo;s talk"}
             </span>
             <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
           </button>

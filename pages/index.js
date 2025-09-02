@@ -47,14 +47,14 @@ const Home = () => {
             animate="show"
             exit="hidden"
 			      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-4 sm:mb-6">
-            <span className="text-white/90 font-light">Hello, I'm</span>
+            <span className="text-white/90 font-light">Hello, I&rsquo;m</span>
             <br />
             <span className="bg-gradient-to-r from-accent via-purple-400 to-pink-400 bg-clip-text text-transparent font-black tracking-tight">
               Sabbir Ahamed
             </span>
             <br />
             <div className="flex flex-wrap items-baseline justify-center xl:justify-start gap-2 sm:gap-3 mt-3 sm:mt-4">
-              <span className="text-white/90 text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium leading-none">I'm a</span>
+              <span className="text-white/90 text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium leading-none">I&rsquo;m a</span>
               <span className="relative inline-block min-w-[180px] sm:min-w-[200px]">
                 <AnimatePresence mode="wait">
                   <motion.span
@@ -79,10 +79,10 @@ const Home = () => {
             animate="show"
             exit="hidden"
 		  className="max-w-sm sm:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 mb-6 max-h-[900px]:mb-4 sm:mb-8 xl:mb-16 text-white/80 text-sm max-h-[900px]:text-xs sm:text-base md:text-lg xl:text-xl leading-relaxed font-light tracking-wide px-2 sm:px-0">
-            I'm a <span className="text-accent font-semibold">passionate programmer</span> and{" "}
+            I&rsquo;m a <span className="text-accent font-semibold">passionate programmer</span> and{" "}
             <span className="text-accent font-semibold">problem solver</span> that enjoys breaking down{" "}
             <span className="text-accent font-semibold">difficult problems</span> and coming up with{" "}
-            <span className="text-accent font-semibold">creative solutions</span> that stretch the bounds of what's possible.
+            <span className="text-accent font-semibold">creative solutions</span> that stretch the bounds of what&rsquo;s possible.
           </motion.p>
           {/* Btn */}
           <div className="flex flex-col sm:flex-row items-center justify-center xl:hidden relative gap-3 max-h-[900px]:gap-2 px-4">
