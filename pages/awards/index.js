@@ -116,15 +116,15 @@ const Awards = () => {
     <div className='min-h-screen bg-primary/30 py-20 md:py-32 text-center xl:text-left overflow-hidden'>
       <Circles />
 
-      <div className='container mx-auto min-h-screen flex flex-col items-center xl:flex-row gap-x-8 gap-y-0 sm:gap-y-2 xl:gap-y-8'>
+      <div className='container mx-auto flex flex-col items-center xl:flex-row xl:items-start gap-x-8 gap-y-0 sm:gap-y-2 xl:gap-y-8'>
         {/* title section */}
-        <div className="flex-none xl:flex-1 flex flex-col justify-start xl:justify-center px-4 xl:px-0 max-w-xl xl:max-w-none mt-4 sm:mt-4 xl:mt-0 mb-4 sm:mb-4 xl:mb-12">
+        <div className="flex-none xl:flex-1 flex flex-col xl:self-center justify-start xl:justify-center px-4 xl:px-0 max-w-xl xl:max-w-none mt-4 sm:mt-4 xl:mt-0 mb-4 sm:mb-4 xl:mb-0">
           <motion.h2
             variants={fadeIn('right', 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className='text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-tight sm:leading-relaxed mb-4 sm:mb-6 xl:mb-8 text-center xl:text-left'
+            className="h2"
           >
             <span className="block bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent drop-shadow-sm py-1">
               Publications &
@@ -195,7 +195,7 @@ const Awards = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[55%] h-auto px-4 xl:px-0"
+          className="flex flex-col w-full xl:max-w-[55%] h-auto px-4 xl:px-0 xl:self-stretch xl:h-[78vh]"
         >
           {/* Section navigation tabs */}
           <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-3 sm:mb-4 xl:mb-6 text-sm sm:text-base">
@@ -220,15 +220,15 @@ const Awards = () => {
           </div>
 
           {/* Scrollable content area */}
-          <div ref={scrollAreaRef} className="max-h-[60vh] overflow-y-auto  scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
+          <div ref={scrollAreaRef} className="max-h-[365px] sm:max-h-[400px] md:max-h-[40vh] xl:max-h-[60vh] xl:flex-1 xl:min-h-0 overflow-y-auto snap-y snap-mandatory xl:snap-none scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
             {/* Publications Section */}
             {activeSection === "publications" && (
-              <div className="py-0 xl:py-6 xl:m-4 flex flex-col gap-y-4 xl:gap-y-6 items-center xl:items-start">
+              <div className="py-0 flex flex-col gap-y-4 xl:gap-y-6 items-center xl:items-start">
                 {publicationsData[0].info.map((item, itemIndex) => {
                   return (
                     <div key={itemIndex} className="flex-1 flex flex-col w-full gap-x-2 items-center text-white/60">
                       {/* Desktop view */}
-                      <div className="hidden xl:block w-full max-w-2xl">
+                      <div className="hidden xl:block w-full max-w-2xl mx-2 xl:mx-3">
                         <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 ">
                           <div className="flex items-start justify-between mb-4">
                             <div className="flex items-start flex-1">
@@ -259,7 +259,7 @@ const Awards = () => {
                       </div>
 
                       {/* Mobile/Tablet view */}
-                      <div className="xl:hidden flex flex-col items-center text-center w-full max-w-md mx-auto px-2">
+                      <div className="xl:hidden flex flex-col items-center text-center w-full max-w-md mx-auto px-2 snap-start">
                         <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-4 hover:border-accent/40 transition-all duration-300 w-full">
                           <div className="flex items-center justify-center mb-3">
                             <div className="text-accent text-xl mr-2">{item.icon}</div>
@@ -287,7 +287,7 @@ const Awards = () => {
 
             {/* Awards & Certificates Section */}
             {activeSection === "awards" && (
-              <div className="py-0 xl:py-6 grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
+              <div className="py-0 grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
                 {awardsData[0].info.map((item, itemIndex) => {
                   return (
                     <div key={itemIndex} className="flex flex-col text-white/60 h-fit">
@@ -360,7 +360,7 @@ const Awards = () => {
                       </div>
 
                       {/* Mobile/Tablet view */}
-                      <div className="xl:hidden flex flex-col items-center text-center w-full max-w-md mx-auto px-2">
+                      <div className="xl:hidden flex flex-col items-center text-center w-full max-w-md mx-auto px-2 snap-start">
                         <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-4 hover:border-accent/40 transition-all duration-300 w-full">
                           <div className="flex items-center justify-center mb-3">
                             <div className="text-accent text-xl mr-2">{item.icon}</div>
@@ -368,7 +368,7 @@ const Awards = () => {
                           </div>
                           <div className="text-accent text-sm md:text-base mb-2">{item.organization}</div>
                           <div className="text-white/70 text-xs md:text-sm mb-3 leading-relaxed">{item.description}</div>
-                          <div className="flex items-center justify-between gap-2 text-xs md:text-sm mt-1">
+                          <div className="flex flex-wrap items-center justify-between gap-2 gap-y-2 text-xs md:text-sm mt-1">
                             <span className="flex items-center text-white/60 bg-white/5 px-2 py-1 rounded">
                               <FaMedal className="mr-1 text-accent" /> {item.year}
                             </span>
@@ -380,11 +380,11 @@ const Awards = () => {
                                   rel="noopener noreferrer"
                                   className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-2 py-1 rounded-md transition-colors"
                                 >
-                                  <FaListOl className="mr-1" /> Standing
+                                  <FaListOl className="mr-1" /> Stands
                                 </a>
                               ) : (
                                 <button className="inline-flex items-center bg-white/5 text-white/40 px-2 py-1 rounded-md cursor-not-allowed" disabled>
-                                  <FaListOl className="mr-1" /> Standing
+                                  <FaListOl className="mr-1" /> Stands
                                 </button>
                               )}
                               {item.certificateUrl ? (
