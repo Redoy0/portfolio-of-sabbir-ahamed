@@ -49,28 +49,28 @@ export const workSlider = {
           live: 'https://diu-leaderboard-demo.vercel.app',
         },
         {
-          title: 'E-Commerce Platform',
+          title: 'DIU BusBuddy',
           path: '/thumb4.jpg',
-          description: 'Full-stack e-commerce solution with payment integration, user authentication, and admin dashboard for managing products and orders.',
-          stack: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-          github: 'https://github.com/sabbir-ahamed/ecommerce-platform',
-          live: 'https://ecommerce-demo.vercel.app',
+          description: 'Campus bus tracking app for DIU with real-time location, route info, and schedules to help students plan rides efficiently.',
+          stack: ['Flutter', 'Firebase', 'Google Maps'],
+          github: 'https://github.com/Redoy0/DIU_BusBuddy',
+          live: 'https://github.com/Redoy0/DIU_BusBuddy',
         },
         {
-          title: 'AI Chat Application',
-          path: '/thumb1.jpg',
-          description: 'Intelligent chatbot with natural language processing capabilities, real-time conversation, and machine learning integration for improved responses.',
-          stack: ['Python', 'TensorFlow', 'Flask', 'React'],
-          github: 'https://github.com/sabbir-ahamed/ai-chat-app',
-          live: 'https://ai-chat-demo.vercel.app',
+          title: 'Responsive CV',
+          path: '/projects/responsive_cv.png',
+          description: 'Responsive online CV with adaptive layout built using semantic HTML and modern CSS.',
+          stack: ['HTML', 'CSS'],
+          github: 'https://github.com/Redoy0/Responsive-CV-Using-Html-Css',
+          live: 'https://redoy0.github.io/Responsive-CV-Using-Html-Css/',
         },
         {
-          title: 'Weather Dashboard',
+          title: 'Political Violence Monitor',
           path: '/thumb3.jpg',
-          description: 'Real-time weather data with interactive charts, location-based forecasts, and detailed weather analytics for comprehensive weather monitoring.',
-          stack: ['JavaScript', 'Chart.js', 'OpenWeather API'],
-          github: 'https://github.com/sabbir-ahamed/weather-dashboard',
-          live: 'https://weather-dashboard-demo.vercel.app',
+          description: 'Interactive dashboard to track and visualize political violence incidents with filters, charts, and maps for insightful analysis.',
+          stack: ['Python', 'Data Visualization', 'Mapping'],
+          github: 'https://github.com/Redoy0/political-violence-monitor',
+          live: 'https://github.com/Redoy0/political-violence-monitor',
         },
 
       ],
@@ -154,20 +154,21 @@ const WorkSlider = () => {
                 <div className="relative rounded-lg overflow-hidden flex items-center justify-center group w-full h-full aspect-video max-w-full shadow-lg">
                   <div className="flex items-center justify-center relative overflow-hidden group w-full h-full">
                     <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700"></div>
+                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700 pointer-events-none z-10"></div>
 
-                    <div className="absolute inset-0 flex flex-col justify-between p-3 xs:p-4 sm:p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute inset-0 z-20 flex flex-col justify-between p-3 xs:p-4 sm:p-5 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-active:pointer-events-auto">
                       <div className="flex justify-between items-start gap-2">
                         <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg drop-shadow-lg leading-tight flex-1 pr-2">{project.title}</h3>
                         <div className="flex gap-2 flex-shrink-0">
-                          <a href={project.github} target="_blank" rel="noopener noreferrer"
-                            className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
-                            <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
-                          </a>
                           <a href={project.live} target="_blank" rel="noopener noreferrer"
                             className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
                             <FaExternalLinkAlt className="w-3 h-3 sm:w-4 sm:h-4" />
                           </a>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer"
+                            className="text-white hover:text-accent hover:scale-110 transition-all duration-300 transform drop-shadow-lg">
+                            <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
+                          </a>
+
                         </div>
                       </div>
 
@@ -217,9 +218,9 @@ const WorkSlider = () => {
                     <div key={index} className="relative rounded-lg overflow-hidden flex items-center justify-center group w-full h-full aspect-video max-w-full shadow-lg">
                       <div className="flex items-center justify-center relative overflow-hidden group w-full h-full">
                         <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700"></div>
+                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/70 to-black/80 opacity-0 group-hover:opacity-95 transition-all duration-700 pointer-events-none z-10"></div>
 
-                        <div className="absolute inset-0 flex flex-col justify-between p-3 xs:p-4 sm:p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <div className="absolute inset-0 z-20 flex flex-col justify-between p-3 xs:p-4 sm:p-5 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-active:pointer-events-auto">
                           <div className="flex justify-between items-start gap-2">
                             <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg drop-shadow-lg leading-tight flex-1 pr-2">{project.title}</h3>
                             <div className="flex gap-2 flex-shrink-0">
@@ -293,10 +294,10 @@ const WorkSlider = () => {
                         <Image src={project.path} width={500} height={300} alt={project.title} className="w-full h-full object-cover" />
 
                         {/* Gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-all duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-all duration-500 pointer-events-none z-10"></div>
 
                         {/* Enhanced overlay with better positioning */}
-                        <div className="absolute inset-0 flex flex-col justify-between p-4 xl:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-4">
+                        <div className="absolute inset-0 z-20 flex flex-col justify-between p-4 xl:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-4 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-active:pointer-events-auto">
                           {/* Top section */}
                           <div className="flex justify-between items-start gap-3">
                             <h3 className="text-white font-bold text-lg xl:text-xl 2xl:text-2xl drop-shadow-2xl leading-tight flex-1">{project.title}</h3>
@@ -334,7 +335,7 @@ const WorkSlider = () => {
                         </div>
 
                         {/* Decorative corner accent */}
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none z-30"></div>
                       </div>
                     </div>
                   ))}
