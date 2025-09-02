@@ -89,7 +89,7 @@ const Contact = () => {
           exit="hidden"
           className="max-w-[620px] mx-auto xl:mx-0 mb-8 px-4 xl:px-0 text-white/80 text-sm sm:text-base leading-relaxed"
         >
-          Have a question, collaboration idea, or just want to say hello? Fill out the form and I&rsquo;ll get back within 24-48 hours.   
+          Have a question, collaboration idea, or just want to say hello? Fill out the form and I&rsquo;ll get back within 24-48 hours.
         </motion.p>
         {/* form */}
         <motion.form

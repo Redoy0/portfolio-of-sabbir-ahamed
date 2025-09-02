@@ -40,7 +40,7 @@ const awardsData = [
         organization: "WDD",
         type: "Professional",
         description: "Comprehensive certification covering modern web development practices and design principles.",
-        year: "2022",
+        year: "2020",
         icon: <FaCertificate />,
         standingUrl: "",
         certificateUrl: "https://drive.google.com/file/d/1dIkJuo02J_db14wcwLn9dIILQSMXqTlo/view",
@@ -61,7 +61,7 @@ const awardsData = [
         organization: "14th Place (Slot B), 21st Place(Final",
         type: "Achievement",
         description: "Secured 14th place in Slot B and ranked 21st in the Final Round of the Fall 2022 contest.",
-        year: "Fall 2022",
+        year: "2022",
         icon: <FaTrophy />,
         standingUrl: "https://toph.co/c/diu-take-off-fall-2022-slot-b/standings",
         certificateUrl: "https://drive.google.com/file/d/13ivKHc318vL7m56K0bQ8KUfI_ifIpgsp/view",
@@ -82,7 +82,7 @@ const awardsData = [
         organization: "5th Place",
         type: "Achievement",
         description: "Achieved 5th place among numerous competitors in the Fall 2022 contest.",
-        year: "Fall 2022",
+        year: "2022",
         icon: <FaTrophy />,
         standingUrl: "https://toph.co/c/diu-take-off-fall-2022-mock/standings",
         certificateUrl: "https://drive.google.com/file/d/13ivKHc318vL7m56K0bQ8KUfI_ifIpgsp/view",
@@ -220,7 +220,7 @@ const Awards = () => {
           </div>
 
           {/* Scrollable content area */}
-          <div ref={scrollAreaRef} className="max-h-[365px] sm:max-h-[400px] md:max-h-[40vh] xl:max-h-[60vh] xl:flex-1 xl:min-h-0 overflow-y-auto snap-y snap-mandatory xl:snap-none scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
+          <div ref={scrollAreaRef} className="max-h-[365px] sm:max-h-[400px] md:max-h-[40vh] xl:max-h-[70vh] xl:flex-1 xl:min-h-0 overflow-y-auto snap-y snap-mandatory xl:snap-none px-2 xl:px-4 py-1 xl:py-2 scrollbar-hover-reveal scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-accent hover:scrollbar-thumb-accent/80">
             {/* Publications Section */}
             {activeSection === "publications" && (
               <div className="py-0 flex flex-col gap-y-4 xl:gap-y-6 items-center xl:items-start">
@@ -228,8 +228,8 @@ const Awards = () => {
                   return (
                     <div key={itemIndex} className="flex-1 flex flex-col w-full gap-x-2 items-center text-white/60">
                       {/* Desktop view */}
-                      <div className="hidden xl:block w-full max-w-2xl mx-2 xl:mx-3">
-                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 ">
+                      <div className="hidden xl:block w-full max-w-3xl mx-2 xl:mx-3">
+                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 xl:min-h-[260px] flex flex-col overflow-hidden">
                           <div className="flex items-start justify-between mb-4">
                             <div className="flex items-start flex-1">
                               <div className="text-accent text-2xl mr-3 mt-1 flex-shrink-0">{item.icon}</div>
@@ -290,10 +290,10 @@ const Awards = () => {
               <div className="py-0 grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-6">
                 {awardsData[0].info.map((item, itemIndex) => {
                   return (
-                    <div key={itemIndex} className="flex flex-col text-white/60 h-fit">
+                    <div key={itemIndex} className="flex flex-col text-white/60 h-full">
                       {/* Desktop view */}
                       <div className="hidden xl:block w-full">
-                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 h-full flex flex-col mx-2 xl:mx-3">
+                        <div className="bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-accent/20 h-full flex flex-col xl:min-h-[260px] overflow-hidden mx-2 xl:mx-3">
                           <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center flex-1">
                               <div className="text-accent text-2xl mr-3 flex-shrink-0">{item.icon}</div>
@@ -309,7 +309,7 @@ const Awards = () => {
 
                           <p className="text-white/70 text-sm mb-4 leading-relaxed flex-1">{item.description}</p>
 
-                          <div className="mt-auto flex items-center justify-between gap-3 pt-2">
+                          <div className="mt-auto flex flex-wrap items-center justify-between gap-3 gap-y-2 pt-2">
                             <span className="text-white/60 text-xs bg-white/5 px-2 py-1 rounded flex items-center w-fit">
                               <FaMedal className="mr-1 text-accent" />
                               {item.year}

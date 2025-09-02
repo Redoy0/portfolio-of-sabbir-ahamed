@@ -89,4 +89,28 @@
     scrollbar-width: thin;
     scrollbar-color: #f13024 rgba(255, 255, 255, 0.1);
   }
+
+  /* Hide scrollbars until hover/tap/focus on the container */
+  .scrollbar-hover-reveal {
+    /* Firefox */
+    scrollbar-width: none;
+  }
+  .scrollbar-hover-reveal:hover,
+  .scrollbar-hover-reveal:active,
+  .scrollbar-hover-reveal:focus,
+  .scrollbar-hover-reveal:focus-within {
+    scrollbar-width: thin;
+  }
+  /* WebKit */
+  .scrollbar-hover-reveal::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .scrollbar-hover-reveal:hover::-webkit-scrollbar,
+  .scrollbar-hover-reveal:active::-webkit-scrollbar,
+  .scrollbar-hover-reveal:focus::-webkit-scrollbar,
+  .scrollbar-hover-reveal:focus-within::-webkit-scrollbar {
+    width: 6px; /* matches .scrollbar-thin */
+    height: 6px;
+  }
 }
