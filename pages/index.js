@@ -20,9 +20,9 @@ const titles = [
 ];
 
 const titleVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  exit: { opacity: 0, y: -20, transition: { duration: 0.5, ease: "easeIn" } },
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.6, ease: "easeIn" } },
 };
 
 const Home = () => {
@@ -31,7 +31,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitle((prev) => (prev + 1) % titles.length);
-    }, 2000);
+    }, 3200);
     return () => clearInterval(interval);
   }, []);
 
@@ -49,13 +49,13 @@ const Home = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-4 sm:mb-6">
             <span className="text-white/90 font-light">Hello, I&rsquo;m</span>
             <br />
-            <span className="bg-gradient-to-r from-accent via-purple-400 to-pink-400 bg-clip-text text-transparent font-black tracking-tight">
+            <span className="bg-gradient-to-r from-white via-slate-200 to-accent bg-clip-text text-transparent font-black tracking-tight">
               Sabbir Ahamed
             </span>
             <br />
             <div className="flex flex-wrap items-baseline justify-center xl:justify-start gap-2 sm:gap-3 mt-3 sm:mt-4">
               <span className="text-white/90 text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium leading-none">I&rsquo;m a</span>
-              <span className="relative inline-block min-w-[180px] sm:min-w-[200px]">
+              <span className="relative inline-flex items-center min-w-[180px] sm:min-w-[200px] h-[1.9rem] sm:h-[2.25rem] md:h-[2.75rem] xl:h-[3.25rem] overflow-hidden py-0.5 sm:py-1">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentTitle}
@@ -63,7 +63,7 @@ const Home = () => {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className="text-accent font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-accent/10 backdrop-blur-sm border border-accent/20 shadow-lg transition-all duration-300 text-lg sm:text-xl md:text-2xl xl:text-3xl leading-none"
+                    className="text-accent font-bold transition-all duration-300 text-lg sm:text-xl md:text-2xl xl:text-3xl leading-none whitespace-nowrap inline-block"
                     style={{ display: "inline-block" }}
                   >
                     {titles[currentTitle]}
