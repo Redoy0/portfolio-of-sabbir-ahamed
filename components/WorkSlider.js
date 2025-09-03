@@ -68,7 +68,7 @@ export const workSlider = {
           title: 'Political Violence Monitor',
           path: '/thumb3.jpg',
           description: 'Interactive dashboard to track and visualize political violence incidents with filters, charts, and maps for insightful analysis.',
-          stack: ['Python', 'Data Visualization', 'Mapping'],
+          stack: ['Python', 'Data Visual', 'Mapping'],
           github: 'https://github.com/Redoy0/political-violence-monitor',
           live: 'https://github.com/Redoy0/political-violence-monitor',
         },
