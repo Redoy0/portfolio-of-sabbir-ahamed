@@ -74,9 +74,9 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Contact Sabbir Ahamed - Get In Touch | Best Web Developer</title>
-        <meta name="description" content="Contact Sabbir Ahamed for web development projects, collaborations, or inquiries. Get in touch with Sabbir for the best portfolio and professional web development services." />
-        <meta name="keywords" content="Contact Sabbir Ahamed, Sabbir contact, web developer contact, best portfolio contact, hire web developer, Sabbir Ahamed email" />
+        <title>Contact Md. Sabbir Ahamed | Best Portfolio for Web Developer</title>
+        <meta name="description" content="Contact Md. Sabbir Ahamed for web development projects, collaborations, or inquiries. Get in touch with Sabbir Ahamed for the best portfolio for web and professional web developer services." />
+        <meta name="keywords" content="Contact Md. Sabbir Ahamed, Sabbir Ahamed contact, web developer contact, best portfolio for web, hire web developer, professional web developer" />
         <link rel="canonical" href="https://sabbirahamed.site/contact" />
       </Head>
       <div className='h-full bg-primary/30'>

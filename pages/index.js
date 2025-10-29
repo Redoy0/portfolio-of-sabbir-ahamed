@@ -39,10 +39,11 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Sabbir Ahamed - Web Developer | Best Web Developer Portfolio </title>
-        <meta name="description" content="Welcome to Sabbir Ahamed's best web developer portfolio. Explore Sabbir's professional web development projects, Flutter apps, and innovative digital solutions. Top-rated portfolio showcasing modern web design." />
-        <meta name="keywords" content="Sabbir Ahamed, Sabbir, web developer portfolio, best web developer portfolio, best portfolio, professional portfolio, web development showcase, creative web developer" />
+        <title>Md. Sabbir Ahamed | Sabbir Ahamed - Best Portfolio for Web Developer</title>
+        <meta name="description" content="Welcome to Md. Sabbir Ahamed's best portfolio for web. Explore Sabbir Ahamed's professional web developer portfolio featuring modern web development projects, Flutter apps, and innovative digital solutions." />
+        <meta name="keywords" content="Sabbir Ahamed, Md. Sabbir Ahamed, Md Sabbir Ahamed, web developer portfolio, best portfolio for web, best web portfolio, professional web developer, web development showcase" />
         <meta name="msvalidate.01" content="C3093135B0BD4AA33F43CB5F1823862B" />
+        <meta name="facebook-domain-verification" content="r15kuvv00nofjnfnw0hsakzvdwznrf" />
         <link rel="canonical" href="https://sabbirahamed.site/" />
       </Head>
       <div className="bg-primary/60 h-full">

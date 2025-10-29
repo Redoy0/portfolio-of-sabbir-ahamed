@@ -117,9 +117,9 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About Sabbir Ahamed - Best Web Developer Portfolio</title>
-        <meta name="description" content="Learn about Sabbir Ahamed, a professional web developer with expertise in modern web technologies. Explore Sabbir's skills, experience, and best portfolio achievements." />
-        <meta name="keywords" content="Sabbir Ahamed about, Sabbir web developer, best web developer, professional portfolio, web developer skills, Sabbir experience" />
+        <title>About Md. Sabbir Ahamed - Best Portfolio for Web Developer</title>
+        <meta name="description" content="Learn about Md. Sabbir Ahamed, a professional web developer with expertise in modern web technologies. Explore Sabbir Ahamed's skills, experience, and best portfolio for web achievements." />
+        <meta name="keywords" content="Md. Sabbir Ahamed, Sabbir Ahamed about, web developer portfolio, best portfolio for web, professional web developer, Sabbir Ahamed skills" />
         <link rel="canonical" href="https://sabbirahamed.site/about" />
       </Head>
       <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
