@@ -1,5 +1,6 @@
 //next image
 import Image from "next/image";
+import Head from "next/head";
 //components
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
@@ -36,9 +37,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-primary/60 h-full">
-      {/* text */}
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 pt-8 sm:pt-8 md:pt-0 lg:pt-0 relative z-20 lg:z-auto pointer-events-auto lg:pointer-events-none">
+    <>
+      <Head>
+        <title>Sabbir Ahamed - Web Developer | Best Web Developer Portfolio </title>
+        <meta name="description" content="Welcome to Sabbir Ahamed's best web developer portfolio. Explore Sabbir's professional web development projects, Flutter apps, and innovative digital solutions. Top-rated portfolio showcasing modern web design." />
+        <meta name="keywords" content="Sabbir Ahamed, Sabbir, web developer portfolio, best web developer portfolio, best portfolio, professional portfolio, web development showcase, creative web developer" />
+        <link rel="canonical" href="https://sabbirahamed.site/" />
+      </Head>
+      <div className="bg-primary/60 h-full">
+        {/* text */}
+        <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 pt-8 sm:pt-8 md:pt-0 lg:pt-0 relative z-20 lg:z-auto pointer-events-auto lg:pointer-events-none">
         <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto px-4 sm:px-6 lg:px-8">
           {/* title */}
           <motion.h1
@@ -157,7 +165,8 @@ const Home = () => {
         </motion.div>
       </div>
 
-    </div>
+      </div>
+    </>
   );
 };
 

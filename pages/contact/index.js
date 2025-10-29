@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 // components
 import Circles from "../../components/Circles";
 
@@ -69,8 +71,16 @@ const Contact = () => {
         setIsLoading(false);
       });
   };
-  return <div className='h-full bg-primary/30'>
-    <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+  return (
+    <>
+      <Head>
+        <title>Contact Sabbir Ahamed - Get In Touch | Best Web Developer</title>
+        <meta name="description" content="Contact Sabbir Ahamed for web development projects, collaborations, or inquiries. Get in touch with Sabbir for the best portfolio and professional web development services." />
+        <meta name="keywords" content="Contact Sabbir Ahamed, Sabbir contact, web developer contact, best portfolio contact, hire web developer, Sabbir Ahamed email" />
+        <link rel="canonical" href="https://sabbirahamed.site/contact" />
+      </Head>
+      <div className='h-full bg-primary/30'>
+        <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
       {/* text & form */}
       <div className="flex flex-col w-full max-w-[700px]">
         {/* text */}
@@ -163,8 +173,10 @@ const Contact = () => {
           </button>
         </motion.form>
       </div>
-    </div>
-  </div>;
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Contact;

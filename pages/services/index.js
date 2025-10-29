@@ -1,3 +1,4 @@
+import Head from 'next/head';
 
 // component
 import ServiceSlider from '../../components/ServiceSlider';
@@ -10,7 +11,14 @@ import { fadeIn } from '../../variants';
 
 const Services = () => {
   return (
-    <div className='h-full bg-primary/30 py-36 flex items-center'>
+    <>
+      <Head>
+        <title>Services - Sabbir Ahamed | Professional Web Development Services</title>
+        <meta name="description" content="Sabbir Ahamed offers professional web development services including modern web design, Flutter app development, UI/UX design, and machine learning solutions. Best portfolio services." />
+        <meta name="keywords" content="Sabbir Ahamed services, Sabbir web development, web developer services, best portfolio services, professional web design, Flutter development" />
+        <link rel="canonical" href="https://sabbirahamed.site/services" />
+      </Head>
+      <div className='h-full bg-primary/30 py-36 flex items-center'>
       <Circles />
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-x-8'>
@@ -47,7 +55,8 @@ const Services = () => {
         </div>
       </div>
       <Bulb />
-    </div>
+      </div>
+    </>
   );
 };
 

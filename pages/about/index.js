@@ -106,6 +106,7 @@ import Circles from "../../components/Circles";
 // freamer motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
+import Head from "next/head";
 
 //counter
 import CountUp from "react-countup";
@@ -114,7 +115,14 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <>
+      <Head>
+        <title>About Sabbir Ahamed - Best Web Developer Portfolio</title>
+        <meta name="description" content="Learn about Sabbir Ahamed, a professional web developer with expertise in modern web technologies. Explore Sabbir's skills, experience, and best portfolio achievements." />
+        <meta name="keywords" content="Sabbir Ahamed about, Sabbir web developer, best web developer, professional portfolio, web developer skills, Sabbir experience" />
+        <link rel="canonical" href="https://sabbirahamed.site/about" />
+      </Head>
+      <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
       <Circles />
       {/* avater img */}
       <motion.div
@@ -367,7 +375,8 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 
 // component
 import WorkSlider from '../../components/WorkSlider';
@@ -10,7 +11,14 @@ import { fadeIn } from '../../variants';
 
 const Projects = () => {
   return (
-    <div className='h-full bg-primary/30 py-20 md:py-32 lg:py-32 xl:py-36 flex items-center'>
+    <>
+      <Head>
+        <title>Projects - Sabbir Ahamed | Best Web Developer Portfolio</title>
+        <meta name="description" content="Explore Sabbir Ahamed's best web developer portfolio projects. View professional web development work, Flutter applications, and innovative digital solutions by Sabbir." />
+        <meta name="keywords" content="Sabbir Ahamed projects, Sabbir portfolio, web developer portfolio, best portfolio projects, web development showcase, professional web projects" />
+        <link rel="canonical" href="https://sabbirahamed.site/projects" />
+      </Head>
+      <div className='h-full bg-primary/30 py-20 md:py-32 lg:py-32 xl:py-36 flex items-center'>
       <Circles />
       <div className='container mx-auto px-4 md:px-6 lg:px-8'>
         <div className='flex flex-col lg:flex-row gap-x-4 md:gap-x-6 lg:gap-x-8'>
@@ -45,7 +53,8 @@ const Projects = () => {
         </div>
       </div>
       <Bulb />
-    </div>
+      </div>
+    </>
   );
 };
 
