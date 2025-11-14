@@ -13,10 +13,10 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title>Sabbir Ahamed Projects - Web Development Portfolio & Work</title>
+        <title>Projects - Sabbir Ahamed - Web Development Portfolio & Work</title>
         <meta name="description" content="Sabbir Ahamed's projects and portfolio - Explore web development work by Sabbir Ahamed including modern web applications, Flutter apps, and innovative solutions. View Sabbir Ahamed's professional portfolio at sabbirahamed.site" />
-                <meta name="keywords" content="Sabbir Ahamed projects, Md. Sabbir Ahamed portfolio, Sabbir Ahamed DIU, Sabbir DIU, web developer portfolio, Flutter applications, web development, Daffodil International University projects" />
-        <meta property="og:title" content="Sabbir Ahamed Projects & Portfolio" />
+        <meta name="keywords" content="Sabbir Ahamed projects, Md. Sabbir Ahamed portfolio, Sabbir Ahamed DIU, Sabbir DIU, web developer portfolio, Flutter applications, web development, Daffodil International University projects" />
+        <meta property="og:title" content="Projects - Sabbir Ahamed - Web Development Portfolio & Work" />
         <meta property="og:description" content="View Sabbir Ahamed's web development projects and portfolio showcasing modern applications and innovative solutions." />
         <link rel="canonical" href="https://sabbirahamed.site/projects" />
       </Head>

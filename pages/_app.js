@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         {/* Primary Meta Tags */}
-        <title>Sabbir Ahamed Redoy - Professional Web Developer | Portfolio & Projects</title>
+        <title>Sabbir Ahamed - Professional Web Developer | Portfolio & Projects</title>
         <meta name="description" content="Sabbir Ahamed Redoy (Md. Sabbir Ahamed) from DIU is a professional web developer specializing in modern web development, Flutter apps, and innovative digital solutions. Visit Sabbir Ahamed Redoy's portfolio to see his best work and projects at sabbirahamed.site." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />

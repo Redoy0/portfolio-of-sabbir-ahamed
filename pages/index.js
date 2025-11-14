@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Sabbir Ahamed Redoy - Web Developer | Professional Portfolio of Web Developer </title>
+        <title>Sabbir Ahamed - Web Developer | Professional Portfolio of Web Developer </title>
         <meta name="description" content="Welcome to Sabbir Ahamed Redoy's professional portfolio. Sabbir Ahamed Redoy from Daffodil International University (DIU) is a skilled web developer specializing in modern web development, Flutter apps, and innovative digital solutions. Discover Sabbir Ahamed Redoy's best projects." />
         <meta name="keywords" content="Sabbir Ahamed Redoy, Sabbir Ahamed, Md. Sabbir Ahamed, Sabbir Redoy, Sabbir Ahamed DIU, Sabbir DIU, Sabbir Ahamed Redoy portfolio, Sabbir Ahamed web developer, web developer portfolio, DIU web developer, Daffodil International University student, Flutter developer, full stack developer" />
         <meta name="msvalidate.01" content="C3093135B0BD4AA33F43CB5F1823862B" />
