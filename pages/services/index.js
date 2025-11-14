@@ -15,7 +15,7 @@ const Services = () => {
       <Head>
         <title>Sabbir Ahamed Services - Web Development & Flutter App Development</title>
         <meta name="description" content="Sabbir Ahamed offers professional web development services including modern web design, Flutter app development, full-stack development, and UI/UX design. Contact Sabbir Ahamed for your project at sabbirahamed.site" />
-        <meta name="keywords" content="Sabbir Ahamed services, Sabbir Ahamed web development, web developer services, Sabbir Ahamed Flutter, professional web developer, hire Sabbir Ahamed" />
+                <meta name="keywords" content="Sabbir Ahamed services, Md. Sabbir Ahamed, Sabbir Ahamed DIU, Sabbir DIU, web development services, Flutter development, professional web developer, Daffodil International University" />
         <meta property="og:title" content="Sabbir Ahamed - Web Development Services" />
         <meta property="og:description" content="Professional web development services by Sabbir Ahamed including web design, Flutter apps, and full-stack development." />
         <link rel="canonical" href="https://sabbirahamed.site/services" />

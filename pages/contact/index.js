@@ -76,7 +76,7 @@ const Contact = () => {
       <Head>
         <title>Contact Sabbir Ahamed - Web Developer | Get In Touch</title>
         <meta name="description" content="Contact Sabbir Ahamed (Md. Sabbir Ahamed) for web development projects, collaborations, or inquiries. Get in touch with Sabbir Ahamed at sabbirahamed.site for professional web development and Flutter app services." />
-        <meta name="keywords" content="Contact Sabbir Ahamed, Sabbir Ahamed contact, Sabbir Ahamed email, hire Sabbir Ahamed, web developer contact, Sabbir Ahamed get in touch" />
+                <meta name="keywords" content="Contact Sabbir Ahamed, Md. Sabbir Ahamed contact, Sabbir Ahamed DIU, Sabbir DIU, web developer contact, hire web developer, Daffodil International University" />
         <meta property="og:title" content="Contact Sabbir Ahamed" />
         <meta property="og:description" content="Get in touch with Sabbir Ahamed for web development projects and collaborations." />
         <link rel="canonical" href="https://sabbirahamed.site/contact" />

@@ -41,7 +41,7 @@ const Home = () => {
       <Head>
         <title>Sabbir Ahamed - Web Developer | Portfolio, Projects & Contact</title>
         <meta name="description" content="Sabbir Ahamed - Professional web developer and software engineer. Explore Sabbir Ahamed's portfolio featuring web development projects, Flutter apps, and innovative solutions. Contact Sabbir Ahamed for your next project at sabbirahamed.site" />
-        <meta name="keywords" content="Sabbir Ahamed, Md. Sabbir Ahamed, Sabbir Ahamed portfolio, Sabbir Ahamed web developer, Sabbir Ahamed projects, web developer, portfolio, sabbirahamed.site" />
+                <meta name="keywords" content="Sabbir Ahamed, Md. Sabbir Ahamed, Md Sabbir Ahamed, Sabbir Ahamed DIU, Sabbir DIU, Sabbir Ahamed portfolio, web developer, professional portfolio, web development showcase, Daffodil International University" />
         <meta name="msvalidate.01" content="C3093135B0BD4AA33F43CB5F1823862B" />
         <meta property="og:title" content="Sabbir Ahamed - Web Developer Portfolio" />
         <meta property="og:description" content="Sabbir Ahamed - Professional web developer. Visit sabbirahamed.site to explore Sabbir Ahamed's projects and portfolio." />
