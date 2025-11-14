@@ -13,9 +13,11 @@ const Services = () => {
   return (
     <>
       <Head>
-        <title>Services - Md. Sabbir Ahamed | Professional Web Developer Services</title>
-        <meta name="description" content="Md. Sabbir Ahamed offers professional web development services including modern web design, Flutter app development, UI/UX design. Best portfolio for web services." />
-        <meta name="keywords" content="Md. Sabbir Ahamed services, Sabbir Ahamed web development, web developer services, best portfolio for web, professional web developer services, Flutter development" />
+        <title>Sabbir Ahamed Services - Web Development & Flutter App Development</title>
+        <meta name="description" content="Sabbir Ahamed offers professional web development services including modern web design, Flutter app development, full-stack development, and UI/UX design. Contact Sabbir Ahamed for your project at sabbirahamed.site" />
+        <meta name="keywords" content="Sabbir Ahamed services, Sabbir Ahamed web development, web developer services, Sabbir Ahamed Flutter, professional web developer, hire Sabbir Ahamed" />
+        <meta property="og:title" content="Sabbir Ahamed - Web Development Services" />
+        <meta property="og:description" content="Professional web development services by Sabbir Ahamed including web design, Flutter apps, and full-stack development." />
         <link rel="canonical" href="https://sabbirahamed.site/services" />
       </Head>
       <div className='h-full bg-primary/30 py-36 flex items-center'>

@@ -13,9 +13,11 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title>Projects - Md. Sabbir Ahamed | Best Portfolio for Web</title>
-        <meta name="description" content="Explore Md. Sabbir Ahamed's best portfolio for web projects. View professional web developer portfolio featuring modern web development work, Flutter applications, and innovative digital solutions." />
-        <meta name="keywords" content="Md. Sabbir Ahamed projects, Sabbir Ahamed portfolio, web developer portfolio, best portfolio for web, web development projects, professional web developer" />
+        <title>Sabbir Ahamed Projects - Web Development Portfolio & Work</title>
+        <meta name="description" content="Sabbir Ahamed's projects and portfolio - Explore web development work by Sabbir Ahamed including modern web applications, Flutter apps, and innovative solutions. View Sabbir Ahamed's professional portfolio at sabbirahamed.site" />
+        <meta name="keywords" content="Sabbir Ahamed projects, Sabbir Ahamed portfolio, Sabbir Ahamed work, web developer projects, Sabbir Ahamed web development, portfolio" />
+        <meta property="og:title" content="Sabbir Ahamed Projects & Portfolio" />
+        <meta property="og:description" content="View Sabbir Ahamed's web development projects and portfolio showcasing modern applications and innovative solutions." />
         <link rel="canonical" href="https://sabbirahamed.site/projects" />
       </Head>
       <div className='h-full bg-primary/30 py-20 md:py-32 lg:py-32 xl:py-36 flex items-center'>

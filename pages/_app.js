@@ -18,28 +18,33 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         {/* Primary Meta Tags */}
-        <title>Sabbir Ahamed | Md. Sabbir Ahamed - Best Portfolio for Web Developer</title>
-        <meta name="description" content="Md. Sabbir Ahamed's best portfolio for web showcasing modern web development projects, Flutter apps, and innovative digital solutions. Explore Sabbir Ahamed's professional web developer portfolio." />
+        <title>Sabbir Ahamed - Professional Web Developer | Portfolio & Projects</title>
+        <meta name="description" content="Sabbir Ahamed - Md. Sabbir Ahamed is a professional web developer specializing in modern web development, Flutter apps, and innovative digital solutions. Visit Sabbir Ahamed's portfolio to see his best work and projects." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
-        <meta name="keywords" content="Sabbir Ahamed, Md. Sabbir Ahamed, Md Sabbir Ahamed, web developer portfolio, best portfolio for web, best web portfolio, web development portfolio, Flutter developer, full stack developer, professional web developer, creative portfolio" />
-        <meta name="author" content="Md. Sabbir Ahamed" />
+        <meta name="keywords" content="Sabbir Ahamed, Md. Sabbir Ahamed, Md Sabbir Ahamed, Sabbir Ahamed portfolio, Sabbir Ahamed web developer, Sabbir Ahamed projects, web developer, Flutter developer, full stack developer, portfolio, web development" />
+        <meta name="author" content="Sabbir Ahamed (Md. Sabbir Ahamed)" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="theme-color" content="#1a1a2e" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sabbirahamed.site/" />
-        <meta property="og:title" content="Md. Sabbir Ahamed - Best Portfolio for Web Developer" />
-        <meta property="og:description" content="Explore Md. Sabbir Ahamed's best portfolio for web featuring modern web development projects, Flutter mobile apps, and innovative digital solutions." />
+        <meta property="og:title" content="Sabbir Ahamed - Professional Web Developer Portfolio" />
+        <meta property="og:description" content="Sabbir Ahamed (Md. Sabbir Ahamed) - Professional web developer portfolio featuring modern web development projects, Flutter apps, and innovative solutions. Explore Sabbir Ahamed's work." />
         <meta property="og:image" content="https://sabbirahamed.site/og-image.jpg" />
-        <meta property="og:site_name" content="Md. Sabbir Ahamed - Web Developer Portfolio" />
+        <meta property="og:image:alt" content="Sabbir Ahamed - Web Developer Portfolio" />
+        <meta property="og:site_name" content="Sabbir Ahamed Portfolio" />
+        <meta property="og:locale" content="en_US" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://sabbirahamed.site/" />
-        <meta name="twitter:title" content="Md. Sabbir Ahamed - Best Portfolio for Web" />
-        <meta name="twitter:description" content="Explore Md. Sabbir Ahamed's best portfolio for web featuring modern web development projects and innovative digital solutions." />
+        <meta name="twitter:title" content="Sabbir Ahamed - Web Developer Portfolio" />
+        <meta name="twitter:description" content="Sabbir Ahamed - Professional web developer portfolio showcasing modern web development, Flutter apps, and innovative projects by Sabbir Ahamed." />
         <meta name="twitter:image" content="https://sabbirahamed.site/og-image.jpg" />
+        <meta name="twitter:image:alt" content="Sabbir Ahamed Portfolio" />
+        <meta name="twitter:creator" content="@sabbirahamed" />
         
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -56,13 +61,15 @@ function MyApp({ Component, pageProps }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Md. Sabbir Ahamed",
-              "alternateName": ["Sabbir Ahamed", "Sabbir", "Md Sabbir Ahamed"],
+              "name": "Sabbir Ahamed",
+              "alternateName": ["Md. Sabbir Ahamed", "Md Sabbir Ahamed", "Sabbir"],
               "url": "https://sabbirahamed.site/",
               "image": "https://sabbirahamed.site/avatar.png",
-              "description": "Md. Sabbir Ahamed is a professional web developer with the best portfolio for web showcasing modern web development projects, Flutter apps, and innovative digital solutions.",
-              "jobTitle": "Web Developer",
-              "knowsAbout": ["Web Development", "Web Developer Portfolio", "Best Portfolio for Web", "Flutter Development", "Full Stack Development", "UI/UX Design", "React", "Next.js"],
+              "description": "Sabbir Ahamed (Md. Sabbir Ahamed) is a professional web developer and software engineer specializing in modern web development, Flutter mobile applications, full-stack development, and innovative digital solutions. Visit Sabbir Ahamed's portfolio at sabbirahamed.site",
+              "jobTitle": "Web Developer & Software Engineer",
+              "knowsAbout": ["Web Development", "Sabbir Ahamed Portfolio", "Flutter Development", "Full Stack Development", "UI/UX Design", "React", "Next.js", "JavaScript", "Software Engineering"],
+              "brand": "Sabbir Ahamed",
+              "identifier": "Sabbir Ahamed",
               "sameAs": [
                 "https://github.com/Redoy0",
                 "https://www.linkedin.com/in/sabbir-ahamed-rs/"

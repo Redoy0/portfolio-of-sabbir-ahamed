@@ -117,9 +117,11 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About Md. Sabbir Ahamed - Best Portfolio for Web Developer</title>
-        <meta name="description" content="Learn about Md. Sabbir Ahamed, a professional web developer with expertise in modern web technologies. Explore Sabbir Ahamed's skills, experience, and best portfolio for web achievements." />
-        <meta name="keywords" content="Md. Sabbir Ahamed, Sabbir Ahamed about, web developer portfolio, best portfolio for web, professional web developer, Sabbir Ahamed skills" />
+        <title>About Sabbir Ahamed - Professional Web Developer & Software Engineer</title>
+        <meta name="description" content="About Sabbir Ahamed (Md. Sabbir Ahamed) - Professional web developer and software engineer with expertise in modern web technologies, Flutter, React, and Next.js. Learn about Sabbir Ahamed's skills, experience, and achievements at sabbirahamed.site" />
+        <meta name="keywords" content="Sabbir Ahamed, About Sabbir Ahamed, Md. Sabbir Ahamed, Sabbir Ahamed web developer, Sabbir Ahamed skills, Sabbir Ahamed experience, web developer" />
+        <meta property="og:title" content="About Sabbir Ahamed - Web Developer" />
+        <meta property="og:description" content="Learn about Sabbir Ahamed's skills and experience as a professional web developer." />
         <link rel="canonical" href="https://sabbirahamed.site/about" />
       </Head>
       <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
