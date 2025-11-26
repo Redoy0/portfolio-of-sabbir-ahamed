@@ -14,7 +14,7 @@ const Socials = () => {
       <RiLinkedinLine/>
     </Link>
     
-    <Link href={'https://www.facebook.com/SabbirAhamedRedoyRs'} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-all duration-300">
+    <Link href={'https://www.facebook.com/SabbirAhamedRedoy'} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-all duration-300">
       <RiFacebookLine/>
     </Link>
     
