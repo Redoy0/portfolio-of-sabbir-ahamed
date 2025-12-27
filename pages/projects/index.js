@@ -28,24 +28,44 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Kechedei',
-    path: '/kechedei1.png',
-    description: 'Designed and developed a responsive website for a laundry shop to enable customers to explore services, place orders, and track laundry status.',
-    stack: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'PHP'],
-    github: 'https://github.com/Redoy0/KecheDei_Project',
-    live: 'https://kechedei.byethost7.com/',
+    title: 'Bitstream',
+    path: '/bitstream.png',
+    description: 'A modern streaming and content delivery platform offering seamless video streaming, live broadcasting capabilities, and robust content management for creators and audiences.',
+    stack: ['React', 'Node.js', 'WebRTC', 'MongoDB', 'AWS'],
+    github: 'https://github.com/bitstreamofficial/bitstream',
+    live: 'https://bitstreamhq.com/',
   },
   {
     id: 4,
+    title: 'UniRide',
+    path: '/uniride.jpg',
+    description: 'A comprehensive ride-sharing mobile application for university students, featuring real-time ride matching, secure payment integration, and live GPS tracking for safe and convenient campus transportation.',
+    stack: ['Flutter', 'Firebase', 'Google Maps', 'Payment Gateway'],
+    github: 'https://github.com/Redoy0/uniride',
+    live: 'https://play.google.com/store/apps/details?id=com.asterisks.unirid',
+    isPlayStore: true,
+  },
+   {
+    id: 5,
     title: 'Portfolio Website',
     path: '/portfolio2.png',
     description: 'Built a sleek, responsive portfolio website to showcase my work, skills, and experience—with smooth navigation and interactive elements for a standout user experience across all devices.',
     stack: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/Redoy0/portfolio-of-sabbir-ahamed',
-    live: 'https://sabbir-ahamed-rs.vercel.app/',
+    live: 'https://sabbirahamed.site/',
   },
   {
-    id: 5,
+    id: 6,
+    title: 'Kechedei',
+    path: '/kechedei1.png',
+    description: 'Designed and developed a responsive website for a laundry shop to enable customers to explore services, place orders, and track laundry status.',
+    stack: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'PHP'],
+    github: 'https://github.com/Redoy0/KecheDei_Project',
+    live: 'https://github.com/Redoy0/KecheDei_Project',
+  },
+ 
+  {
+    id: 7,
     title: 'ScheduLearn',
     path: '/thumb2.jpg',
     description: 'Created a responsive web platform to visualize CPU scheduling algorithms like FCFS, SJF, and Round Robin through interactive real-time simulations.',
@@ -54,25 +74,25 @@ const projects = [
     live: 'https://schedulearn.vercel.app/',
   },
   {
-    id: 6,
+    id: 8,
     title: 'NeuvoHomes',
     path: '/thumb4.jpg',
     description: 'Developed a platform for ordering 3D home designs and exploring pre-made home delivery options. The site features a responsive design and a user-friendly ordering system.',
     stack: ['HTML', 'CSS', 'Bootstrap', 'Django'],
-    github: 'https://github.com/sabbir-ahamed/neuvo-homes',
-    live: 'https://neuvo-homes-demo.vercel.app',
+    github: 'https://github.com/Redoy0/NuevoHomes',
+    live: 'https://github.com/Redoy0/NuevoHomes',
   },
   {
-    id: 7,
+    id: 9,
     title: 'DIU LeaderBoard',
     path: '/thumb3.jpg',
     description: 'Created a gamified mobile app for DIU students to track academic rankings, featuring secure login and real-time leaderboard to boost engagement and motivation.',
     stack: ['Flutter', 'Firebase', 'Firestore', 'API'],
-    github: 'https://github.com/sabbir-ahamed/diu-leaderboard',
-    live: 'https://diu-leaderboard-demo.vercel.app',
+    github: 'https://github.com/Redoy0/DIU_LeaderBoard',
+    live: 'https://github.com/Redoy0/DIU_LeaderBoard',
   },
   {
-    id: 8,
+    id: 10,
     title: 'DIU BusBuddy',
     path: '/thumb4.jpg',
     description: 'Campus bus tracking app for DIU with real-time location, route info, and schedules to help students plan rides efficiently.',
@@ -81,7 +101,7 @@ const projects = [
     live: 'https://github.com/Redoy0/DIU_BusBuddy',
   },
   {
-    id: 9,
+    id: 11,
     title: 'Responsive CV',
     path: '/projects/responsive_cv.png',
     description: 'Responsive online CV with adaptive layout built using semantic HTML and modern CSS.',
@@ -90,7 +110,7 @@ const projects = [
     live: 'https://redoy0.github.io/Responsive-CV-Using-Html-Css/',
   },
   {
-    id: 10,
+    id: 12,
     title: 'Political Violence Monitor',
     path: '/thumb3.jpg',
     description: 'Interactive dashboard to track and visualize political violence incidents with filters, charts, and maps for insightful analysis.',
@@ -195,7 +215,7 @@ const Projects = () => {
                         rel='noopener noreferrer'
                         className='flex-1 flex items-center justify-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-accent hover:bg-accent/80 text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/50 hover:-translate-y-1 text-sm md:text-base'>
                         <FaExternalLinkAlt className='text-sm md:text-base' />
-                        <span>Live Demo</span>
+                        <span>{project.isPlayStore ? 'Play Store' : 'Live Demo'}</span>
                       </a>
                       <a
                         href={project.github}
