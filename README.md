@@ -20,7 +20,7 @@ A modern, responsive personal portfolio built with Next.js and Tailwind CSS. It 
 - Particles: tsparticles / react-tsparticles
 - Icons: react-icons
 - Contact: emailjs-browser
-
+<!--
 ## 🚀 Quick Start
 
 Prerequisites:
@@ -47,6 +47,7 @@ Run linter:
 ```powershell
 npm run lint
 ```
+
 
 ## 🔐 Environment Variables (Contact Form)
 Create a `.env.local` in the project root for EmailJS keys:
@@ -80,6 +81,6 @@ This project works great on Vercel. After pushing to GitHub:
 ## 🧩 Notes
 - The project uses `@next/font` (Next 13). You can migrate to `next/font` via the official codemod if you upgrade Next.
 - Line endings are normalized to LF using `.gitattributes` and `.editorconfig`.
-
+-->
 ## 📄 License
 This repository is for personal portfolio use. Feel free to reference structure and ideas; please do not reuse content or identity.
