@@ -1,30 +1,29 @@
 # Sabbir Ahamed – Portfolio
 
-A modern, responsive personal portfolio built with Next.js and Tailwind CSS. It showcases projects, achievements, services, testimonials, and an animated hero with interactive particles. Deployed on Vercel.
+A modern, responsive single-page portfolio built with Next.js (App Router) and Tailwind CSS. One scrolling landing page covers the hero, about, experience, skills, projects, achievements, services, and contact. Deployed on Vercel.
 
 ## ✨ Features
+- Single landing page with smooth-scrolling section nav and scroll-spy highlighting
 - Animated hero with rotating titles and interactive particles
-- Projects slider (mobile/tablet/desktop optimized)
-- Awards & Publications with tabs and smooth scrolling
-- Services, About, and Testimonials pages
+- Work experience timeline, grouped skills, featured + older projects
+- Problem-solving stats, competitions, certifications, and publications
 - Contact form integrated with EmailJS
-- Custom scrollbars and hover-reveal behavior
+- Old routes (`/about`, `/projects`, ...) redirect to their section anchors
 - Vercel Speed Insights integrated
-- SEO basics via `<Head>` and favicon
+- SEO via the Metadata API, JSON-LD, `sitemap.js`, and `robots.js`
 
 ## 🧰 Tech Stack
-- Framework: Next.js (React 18)
+- Framework: Next.js 16 App Router (React 19)
 - Styling: Tailwind CSS
 - Animations: Framer Motion
-- Sliders: Swiper
-- Particles: tsparticles / react-tsparticles
+- Particles: @tsparticles/react + @tsparticles/slim
 - Icons: react-icons
 - Contact: emailjs-browser
 <!--
 ## 🚀 Quick Start
 
 Prerequisites:
-- Node.js 16+ and npm
+- Node.js 20.9+ and npm
 
 Install dependencies and run the dev server:
 
@@ -63,14 +62,22 @@ You can obtain these from https://www.emailjs.com/ and wire them in the contact 
 
 ## 📁 Project Structure (high level)
 ```
-components/    # UI components (sliders, header, layout, etc.)
-pages/         # Next.js routes (home, about, services, work, contact, etc.)
-public/        # Static assets (images, favicon)
-styles/        # Global styles (Tailwind)
+src/
+  app/                  # App Router: layout.js (metadata, fonts), page.js, globals.css, sitemap.js, robots.js
+  components/
+    layout/             # Header, Nav, Socials, TopLeftImg
+    sections/           # One component per landing-page section (Hero, About, Experience, ...)
+    ui/                 # Shared building blocks (Section, SectionHeading, ParticlesContainer, ...)
+  data/                 # Site content (profile, experience, skills, projects, achievements, services, nav)
+  hooks/                # useActiveSection (scroll-spy)
+  lib/                  # Framer Motion variants
+public/                 # Static assets (images, CV, favicon)
 ```
 
+To update content, edit the files in `src/data/`.
+
 ## 🖼️ Favicon
-Favicon is configured in `pages/_app.js` and stored in `public/` as `favicon.svg` with an ICO fallback.
+Favicon is configured via `metadata.icons` in `src/app/layout.js` and stored in `public/` as `favicon.svg` with an ICO fallback.
 
 ## 🌐 Deploy
 This project works great on Vercel. After pushing to GitHub:
@@ -79,7 +86,6 @@ This project works great on Vercel. After pushing to GitHub:
 - Environment variables: add EmailJS keys if using the contact form
 
 ## 🧩 Notes
-- The project uses `@next/font` (Next 13). You can migrate to `next/font` via the official codemod if you upgrade Next.
 - Line endings are normalized to LF using `.gitattributes` and `.editorconfig`.
 -->
 ## 📄 License
